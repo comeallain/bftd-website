@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back From The Dead Films — Reviving Cinema in L.A.</title>
+<meta name="description" content="Back From The Dead Films is a creatively driven production company crafting groundbreaking movies and documentaries based on true stories. Founded by filmmaker Richie Smyth in Los Angeles.">
+<meta property="og:title" content="Back From The Dead Films">
+<meta property="og:description" content="Visualising Truth, Passion and Imagination. A Richie Smyth Production Company.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bftdfilms.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080808;--bg2:#0f0f0f;--bg3:#141414;--bg4:#1a1a1a;--text:#e8e4e0;--text2:#6b6560;--text3:#3a3835;--accent:#c41e1e;--accent-g:rgba(196,30,30,.15);--accent-b:#e02525;--white:#fff;--border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.1);--fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',-apple-system,sans-serif;--fa:'Bebas Neue',Impact,sans-serif;--fm:'DM Mono','Courier New',monospace;--eo:cubic-bezier(.25,.46,.45,.94);--ed:cubic-bezier(.16,1,.3,1);--t:.4s var(--eo);--ts:.8s var(--ed);--nh:72px;--mw:1280px;--g:clamp(1.5rem,4vw,3rem)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scrollbar-width:thin;scrollbar-color:var(--accent) var(--bg)}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--white)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none;transition:color var(--t)}
+.con{width:100%;max-width:var(--mw);margin:0 auto;padding:0 var(--g)}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nh);display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);transition:background var(--t)}
+.nav.scrolled{background:rgba(8,8,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav__logo{font-family:var(--fa);font-size:clamp(.9rem,2vw,1.15rem);letter-spacing:.2em;text-transform:uppercase;color:var(--text);white-space:nowrap}
+.nav__logo:hover{color:var(--accent)}.nav__logo span{color:var(--accent)}
+.nav__links{display:flex;align-items:center;gap:clamp(1.25rem,2.5vw,2.25rem);list-style:none}
+.nav__link{font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text2);position:relative;padding:.25rem 0;transition:color var(--t)}
+.nav__link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width var(--t)}
+.nav__link:hover,.nav__link.active{color:var(--text)}.nav__link:hover::after,.nav__link.active::after{width:100%}
+.nav__toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:1001}
+.nav__toggle span{display:block;width:24px;height:1.5px;background:var(--text);transition:all .3s ease;margin:6px 0}
+.nav__toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__toggle.open span:nth-child(2){opacity:0}
+.nav__toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* HERO */
+.hero{position:relative;width:100%;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#1a0a0a 0%,#080808 30%,#0d0d0d 60%,#120808 100%)}
+.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero__ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,8,8,.6) 0%,rgba(8,8,8,.2) 40%,rgba(8,8,8,.2) 60%,rgba(8,8,8,.95) 100%)}
+.hero__vig{position:absolute;inset:0;z-index:1;box-shadow:inset 0 0 200px 60px rgba(0,0,0,.7);pointer-events:none}
+.hero__c{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 var(--g)}
+.hero__pre{font-family:var(--fm);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);animation:fu .8s var(--ed) .3s forwards}
+.hero__t{font-family:var(--fa);font-size:clamp(3rem,10vw,8rem);line-height:.9;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:1.5rem;opacity:0;transform:translateY(30px);animation:fu 1s var(--ed) .5s forwards}
+.hero__t em{font-style:normal;color:var(--accent);display:block;font-size:.35em;letter-spacing:.25em;margin-top:.5rem;font-family:var(--fd);font-weight:400}
+.hero__tag{font-family:var(--fd);font-size:clamp(1rem,2vw,1.35rem);font-weight:400;font-style:italic;color:var(--text2);max-width:500px;margin:0 auto;opacity:0;transform:translateY(20px);animation:fu .8s var(--ed) .8s forwards}
+.hero__sc{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.75rem;color:var(--text3);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;opacity:0;animation:fu .8s var(--ed) 1.2s forwards}
+.hero__scl{width:1px;height:40px;background:var(--text3);position:relative;overflow:hidden}
+.hero__scl::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--accent);animation:sl 2s ease-in-out infinite}
+
+/* SECTIONS */
+.sec{padding:clamp(4rem,10vh,8rem) 0}
+.sec__h{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec__l{font-family:var(--fm);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
+.sec__l::before{content:'';width:30px;height:1px;background:var(--accent)}
+.sec__t{font-family:var(--fd);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:var(--white);line-height:1.1}
+
+/* ============================================
+   PROJECT CAROUSEL
+   ============================================ */
+.carousel-sec{border-top:1px solid var(--border);overflow:hidden}
+.carousel-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.carousel-nav{display:flex;align-items:center;gap:1rem}
+.carousel-counter{font-family:var(--fm);font-size:.65rem;letter-spacing:.1em;color:var(--text3);min-width:50px;text-align:center}
+.carousel-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+.carousel-btn:hover{border-color:var(--accent);color:var(--white);background:var(--accent-g)}
+.carousel-btn:disabled{opacity:.25;cursor:default;border-color:var(--border)}
+.carousel-btn:disabled:hover{background:transparent;color:var(--text2)}
+.carousel-btn svg{width:18px;height:18px}
+.carousel-wrap{overflow:hidden;margin:0 calc(var(--g) * -1);padding:0 var(--g)}
+.carousel-track{display:flex;gap:clamp(1rem,2vw,1.5rem);transition:transform .6s var(--ed);will-change:transform}
+.carousel-track.dragging{transition:none;cursor:grabbing}
+.carousel-wrap:hover .carousel-track{cursor:grab}
+
+/* PROJECT CARDS (carousel items) */
+.pc{flex:0 0 calc(50% - .75rem);min-width:0;position:relative;border-radius:6px;overflow:hidden;background:var(--bg3);cursor:pointer;transition:transform var(--t);display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-4px)}
+.pc__img{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111}
+.pc__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ed),filter var(--t);filter:saturate(.7)}
+.pc:hover .pc__img img{transform:scale(1.05);filter:saturate(1)}
+.pc__ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,8,8,.9) 100%)}
+.pc__st{position:absolute;top:1rem;right:1rem;font-family:var(--fm);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;padding:.3rem .8rem;border:1px solid var(--accent);color:var(--accent);border-radius:2px;background:rgba(8,8,8,.6);backdrop-filter:blur(8px)}
+.pc__num{position:absolute;top:1rem;left:1rem;font-family:var(--fa);font-size:2.5rem;color:var(--white);opacity:.08;line-height:1;pointer-events:none}
+.pc__b{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.pc__g{font-family:var(--fm);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.pc__tt{font-family:var(--fa);font-size:clamp(1.5rem,3vw,2.25rem);letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem;transition:color var(--t)}
+.pc:hover .pc__tt{color:var(--accent)}
+.pc__ll{font-size:.9rem;color:var(--text2);line-height:1.5;margin-bottom:1.25rem;flex:1}
+.pc__cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text2);transition:color var(--t),gap var(--t);background:none;border:none;cursor:pointer;padding:0;font-family:var(--fb)}
+.pc:hover .pc__cta{color:var(--accent);gap:.75rem}
+.pc__cta svg{width:16px;height:16px;transition:transform var(--t)}
+.pc:hover .pc__cta svg{transform:translateX(4px)}
+
+/* Carousel dots */
+.carousel-dots{display:flex;justify-content:center;gap:.5rem;margin-top:2rem}
+.carousel-dot{width:6px;height:6px;border-radius:50%;background:var(--text3);border:none;cursor:pointer;transition:all var(--t);padding:0}
+.carousel-dot.active{background:var(--accent);transform:scale(1.3)}
+
+/* ============================================
+   PROJECT MODAL
+   ============================================ */
+.modal{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:var(--g)}
+.modal.open{opacity:1;pointer-events:all}
+.modal__bg{position:absolute;inset:0;background:rgba(4,4,4,.92);backdrop-filter:blur(30px)}
+.modal__container{position:relative;z-index:1;width:100%;max-width:900px;max-height:90vh;background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;transform:translateY(20px) scale(.97);transition:transform .4s var(--ed);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.modal.open .modal__container{transform:translateY(0) scale(1)}
+.modal__close{position:sticky;top:0;float:right;z-index:5;margin:1rem;width:40px;height:40px;border-radius:50%;border:1px solid var(--border2);background:rgba(8,8,8,.8);backdrop-filter:blur(10px);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+.modal__close:hover{border-color:var(--accent);color:var(--white);background:var(--accent)}
+.modal__close svg{width:18px;height:18px}
+
+/* Modal hero */
+.modal__hero{position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;margin-top:-56px}
+.modal__hero img{width:100%;height:100%;object-fit:cover;filter:saturate(.75)}
+.modal__hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.3) 0%,rgba(15,15,15,.95) 100%)}
+.modal__hero-text{position:absolute;bottom:2rem;left:2.5rem;right:2.5rem;z-index:2}
+.modal__hero-genre{font-family:var(--fm);font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.modal__hero-title{font-family:var(--fa);font-size:clamp(2rem,5vw,3.5rem);letter-spacing:.06em;text-transform:uppercase;color:var(--white);line-height:1;margin-bottom:.5rem}
+.modal__hero-tag{font-family:var(--fd);font-size:1rem;font-style:italic;color:var(--text2)}
+
+/* Modal body */
+.modal__body{padding:2rem 2.5rem 2.5rem}
+.modal__grid{display:grid;grid-template-columns:1fr 280px;gap:2.5rem}
+.modal__synopsis h3{font-family:var(--fd);font-size:1.35rem;font-weight:700;color:var(--white);margin-bottom:1rem}
+.modal__synopsis p{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:1rem}
+.modal__synopsis p:last-child{margin-bottom:0}
+
+/* Sidebar */
+.modal__sidebar{display:flex;flex-direction:column;gap:1.25rem}
+.modal__meta{padding:1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:4px}
+.modal__meta-label{font-family:var(--fm);font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
+.modal__meta-value{font-size:.9rem;color:var(--text)}
+.modal__tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.modal__tag{font-family:var(--fm);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .7rem;border:1px solid var(--border);border-radius:2px;color:var(--text2)}
+
+/* Modal key art row */
+.modal__stills{margin-top:2rem;border-top:1px solid var(--border);padding-top:2rem}
+.modal__stills h4{font-family:var(--fm);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.modal__stills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;border-radius:4px;overflow:hidden}
+.modal__stills-grid img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:saturate(.7) brightness(.9);transition:filter .3s ease}
+.modal__stills-grid img:hover{filter:saturate(1) brightness(1)}
+
+/* ============================================
+   VIDEO THEATRE (carried forward)
+   ============================================ */
+.vt{border-top:1px solid var(--border)}
+.vt__grid{display:grid;grid-template-columns:1fr 340px;gap:1.5rem;align-items:start}
+.player{position:relative;border-radius:6px;overflow:hidden;background:#000;aspect-ratio:16/9;cursor:pointer}
+.player video{width:100%;height:100%;object-fit:cover;display:block}
+.player__ov{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);transition:opacity var(--t)}
+.player.playing .player__ov{opacity:0;pointer-events:none}
+.player:hover .player__ov{opacity:1;pointer-events:all}
+.player__pb{width:80px;height:80px;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:rgba(196,30,30,.85);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--t),background var(--t);backdrop-filter:blur(4px)}
+.player__pb:hover{transform:scale(1.1);background:var(--accent-b)}
+.player__pb svg{width:28px;height:28px;fill:var(--white);margin-left:3px}
+.player.playing .player__pb .pi{display:none}.player.playing .player__pb .pp{display:block}
+.player:not(.playing) .player__pb .pp{display:none}
+.player__ctrl{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:.75rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;align-items:center;gap:.75rem;opacity:0;transition:opacity var(--t)}
+.player:hover .player__ctrl,.player:not(.playing) .player__ctrl{opacity:1}
+.player__prog{flex:1;height:3px;background:rgba(255,255,255,.15);border-radius:2px;cursor:pointer;position:relative;transition:height .15s ease}
+.player__prog:hover{height:5px}
+.player__pf{height:100%;background:var(--accent);border-radius:2px;width:0%;position:relative}
+.player__pf::after{content:'';position:absolute;right:-5px;top:50%;width:10px;height:10px;border-radius:50%;background:var(--white);transform:translateY(-50%) scale(0);transition:transform .15s ease}
+.player__prog:hover .player__pf::after{transform:translateY(-50%) scale(1)}
+.player__time{font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.5);min-width:75px;white-space:nowrap}
+.player__cb{background:none;border:none;cursor:pointer;padding:.25rem;color:rgba(255,255,255,.6);transition:color var(--t);display:flex;align-items:center;justify-content:center}
+.player__cb:hover{color:var(--white)}.player__cb svg{width:18px;height:18px}
+.player__vw{display:flex;align-items:center;gap:.4rem}
+.player__vs{width:60px;height:3px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.15);border-radius:2px;outline:none;cursor:pointer}
+.player__vs::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--white);cursor:pointer}
+.player__tb{position:absolute;top:0;left:0;right:0;z-index:3;padding:1rem 1.25rem;background:linear-gradient(rgba(0,0,0,.7),transparent);opacity:0;transition:opacity var(--t)}
+.player:hover .player__tb{opacity:1}
+.player__np{font-family:var(--fm);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
+.player__vt{font-family:var(--fa);font-size:1.1rem;letter-spacing:.05em;text-transform:uppercase;color:var(--white)}
+
+/* PLAYLIST */
+.pl{background:var(--bg3);border:1px solid var(--border);border-radius:6px;overflow:hidden;max-height:calc((9/16)*(100vw - var(--g)*2 - 340px - 1.5rem));display:flex;flex-direction:column}
+.pl__hd{padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.pl__ht{font-family:var(--fm);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.pl__ct{font-family:var(--fm);font-size:.6rem;color:var(--text3)}
+.pl__items{flex:1;overflow-y:auto;list-style:none;scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+.pl__i{display:grid;grid-template-columns:100px 1fr;gap:.85rem;padding:.75rem 1rem;cursor:pointer;border-bottom:1px solid var(--border);transition:background var(--t);align-items:center}
+.pl__i:last-child{border-bottom:none}.pl__i:hover{background:var(--bg4)}
+.pl__i.active{background:var(--accent-g);border-left:2px solid var(--accent)}
+.pl__th{position:relative;aspect-ratio:16/9;border-radius:3px;overflow:hidden;background:#111}
+.pl__th img{width:100%;height:100%;object-fit:cover;filter:saturate(.6);transition:filter var(--t)}
+.pl__i:hover .pl__th img,.pl__i.active .pl__th img{filter:saturate(1)}
+.pl__dur{position:absolute;bottom:3px;right:3px;font-family:var(--fm);font-size:.5rem;background:rgba(0,0,0,.8);color:rgba(255,255,255,.7);padding:1px 4px;border-radius:2px}
+.pl__play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t)}
+.pl__i:hover .pl__play{opacity:1}
+.pl__play svg{width:24px;height:24px;fill:var(--white);filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.pl__meta{min-width:0}
+.pl__it{font-size:.8rem;font-weight:500;color:var(--text);margin-bottom:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color var(--t)}
+.pl__i.active .pl__it{color:var(--accent)}
+.pl__is{font-size:.65rem;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* GALLERY */
+.gal{border-top:1px solid var(--border)}
+.gal__fil{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+.gal__fb{font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1.15rem;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--text2);cursor:pointer;transition:all var(--t)}
+.gal__fb:hover{border-color:var(--text3);color:var(--text)}
+.gal__fb.active{border-color:var(--accent);color:var(--accent);background:var(--accent-g)}
+.gal__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.75rem;grid-auto-flow:dense}
+.gal__item{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;background:#111;transition:transform var(--t)}
+.gal__item.wide{grid-column:span 2}.gal__item.tall{grid-row:span 2}
+.gal__item img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;filter:saturate(.7) brightness(.9);transition:filter .6s var(--ed),transform .6s var(--ed)}
+.gal__item.wide img{aspect-ratio:2/1}.gal__item.tall img{aspect-ratio:2/3}
+.gal__item:hover img{filter:saturate(1) brightness(1);transform:scale(1.03)}
+.gal__item-ov{position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(8,8,8,.8) 100%);opacity:0;transition:opacity var(--t);display:flex;flex-direction:column;justify-content:flex-end;padding:1rem}
+.gal__item:hover .gal__item-ov{opacity:1}
+.gal__item-t{font-family:var(--fa);font-size:1rem;letter-spacing:.05em;text-transform:uppercase;color:var(--white)}
+.gal__item-c{font-family:var(--fm);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
+.gal__item-x{position:absolute;top:.75rem;right:.75rem;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t),transform var(--t);transform:scale(.8)}
+.gal__item:hover .gal__item-x{opacity:1;transform:scale(1)}
+.gal__item-x svg{width:14px;height:14px;stroke:var(--white);fill:none;stroke-width:2}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:10000;background:rgba(4,4,4,.95);backdrop-filter:blur(30px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.lb.open{opacity:1;pointer-events:all}
+.lb__in{position:relative;max-width:90vw;max-height:85vh;display:flex;align-items:center;justify-content:center}
+.lb__img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px;opacity:0;transform:scale(.95);transition:opacity .3s ease .1s,transform .4s var(--ed) .1s}
+.lb.open .lb__img{opacity:1;transform:scale(1)}
+.lb__close{position:absolute;top:-3rem;right:0;background:none;border:none;cursor:pointer;color:var(--text2);transition:color var(--t);padding:.5rem}
+.lb__close:hover{color:var(--white)}.lb__close svg{width:24px;height:24px}
+.lb__nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);transition:all var(--t)}
+.lb__nav:hover{background:var(--accent-g);border-color:var(--accent);color:var(--white)}
+.lb__nav svg{width:20px;height:20px}
+.lb__prev{left:-4rem}.lb__next{right:-4rem}
+.lb__cap{position:absolute;bottom:-2.5rem;left:0;right:0;text-align:center;font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3)}
+.lb__ctr{position:absolute;top:-3rem;left:0;font-family:var(--fm);font-size:.6rem;color:var(--text3)}
+
+/* ABOUT */
+.about-us{border-top:1px solid var(--border)}
+.manifesto{text-align:center;max-width:800px;margin:0 auto clamp(4rem,8vw,7rem)}
+.manifesto__quote{font-family:var(--fd);font-size:clamp(1.5rem,3.5vw,2.75rem);font-weight:400;font-style:italic;color:var(--white);line-height:1.35;margin-bottom:2rem;position:relative}
+.manifesto__quote::before{content:'\201C';position:absolute;top:-.5em;left:50%;transform:translateX(-50%);font-size:6rem;color:var(--accent);opacity:.15;font-style:normal;line-height:1;pointer-events:none}
+.manifesto__attr{font-family:var(--fm);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);margin-bottom:clamp(4rem,8vw,7rem)}
+.about-story h3{font-family:var(--fd);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--white);margin-bottom:1.25rem}
+.about-story p{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:1rem}
+.about-story p strong{color:var(--text);font-weight:500}
+.about-collage{position:relative;min-height:500px}
+.about-collage__main{position:relative;width:85%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;z-index:1}
+.about-collage__main img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter var(--ts)}
+.about-collage__main:hover img{filter:grayscale(0%)}
+.about-collage__float{position:absolute;bottom:-1.5rem;right:0;width:55%;aspect-ratio:16/9;border-radius:4px;overflow:hidden;z-index:2;border:3px solid var(--bg);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.about-collage__float img{width:100%;height:100%;object-fit:cover}
+.about-collage__accent{position:absolute;top:2rem;right:2rem;width:100px;height:100px;border:1px solid var(--accent);border-radius:2px;opacity:.15;z-index:0}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:clamp(4rem,8vw,7rem)}
+.pillar{padding:2rem;background:var(--bg3);border:1px solid var(--border);border-radius:4px;transition:border-color var(--t),transform var(--t)}
+.pillar:hover{border-color:var(--accent);transform:translateY(-4px)}
+.pillar__icon{width:48px;height:48px;border-radius:50%;background:var(--accent-g);border:1px solid rgba(196,30,30,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.pillar__icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.5}
+.pillar__title{font-family:var(--fa);font-size:1.25rem;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem}
+.pillar__text{font-size:.9rem;color:var(--text2);line-height:1.6}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:clamp(4rem,8vw,7rem)}
+.stat{background:var(--bg3);padding:2rem 1.5rem;text-align:center;transition:background var(--t)}
+.stat:hover{background:var(--bg4)}
+.stat__num{font-family:var(--fa);font-size:clamp(2rem,4vw,3.5rem);color:var(--accent);line-height:1;margin-bottom:.5rem}
+.stat__label{font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text2)}
+.team-spot{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.team-spot__portrait{position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden}
+.team-spot__portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%);transition:filter var(--ts)}
+.team-spot__portrait:hover img{filter:grayscale(0%)}
+.team-spot__portrait::after{content:'';position:absolute;inset:0;border:1px solid var(--border);border-radius:4px;pointer-events:none}
+.team-spot__info h3{font-family:var(--fd);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--white);margin-bottom:.5rem}
+.team-spot__role{font-family:var(--fm);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem}
+.team-spot__bio{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:.75rem}
+.team-spot__roles{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;margin-bottom:2rem}
+.role-tag{font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1rem;border:1px solid var(--border);border-radius:2px;color:var(--text2);transition:border-color var(--t),color var(--t)}
+.role-tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* BTN */
+.btn{display:inline-flex;align-items:center;gap:.75rem;font-family:var(--fb);font-size:.75rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2rem;border:1px solid var(--text3);border-radius:2px;background:transparent;color:var(--text);cursor:pointer;transition:all var(--t);position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform var(--t);z-index:-1}
+.btn:hover{border-color:var(--accent);color:var(--white)}.btn:hover::before{transform:scaleX(1)}
+.btn svg{width:16px;height:16px}
+
+/* CONTACT */
+.contact{border-top:1px solid var(--border)}
+.contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem)}
+.contact__detail{margin-bottom:2rem}
+.contact__dl{font-family:var(--fm);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
+.contact__dv{font-size:1rem;color:var(--text2)}.contact__dv a:hover{color:var(--accent)}
+.contact__socials{display:flex;gap:1rem;margin-top:1rem}
+.contact__sl{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:50%;color:var(--text2);transition:all var(--t)}
+.contact__sl:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-g)}
+.contact__sl svg{width:18px;height:18px}
+.form{display:flex;flex-direction:column;gap:1.25rem}
+.form__l{display:block;font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
+.form__i,.form__ta{width:100%;font-family:var(--fb);font-size:.95rem;color:var(--text);background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:.85rem 1rem;transition:border-color var(--t);outline:none}
+.form__i:focus,.form__ta:focus{border-color:var(--accent)}
+.form__i::placeholder,.form__ta::placeholder{color:var(--text3)}
+.form__ta{resize:vertical;min-height:120px}.form__s{align-self:flex-start}
+
+/* FOOTER */
+.ft{padding:2rem 0;border-top:1px solid var(--border)}
+.ft__in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft__c{font-size:.7rem;color:var(--text3)}
+.ft__ls{display:flex;gap:1.5rem;list-style:none}
+.ft__l{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color var(--t)}
+.ft__l:hover{color:var(--accent)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ed),transform .8s var(--ed)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv1{transition-delay:.1s}.rv2{transition-delay:.2s}.rv3{transition-delay:.3s}
+
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+@keyframes sl{0%{top:-100%}50%{top:100%}50.01%{top:-100%}100%{top:100%}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.vt__grid{grid-template-columns:1fr}.pl{max-height:300px}}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .about-collage{min-height:auto;margin-bottom:2rem}
+  .about-collage__float{position:relative;bottom:auto;right:auto;width:100%;margin-top:1rem;border:none}
+  .about-collage__main{width:100%}
+  .about-collage__accent{display:none}
+  .pillars{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .team-spot{grid-template-columns:1fr}
+  .team-spot__portrait{max-height:400px;aspect-ratio:16/9}
+  .contact__grid{grid-template-columns:1fr}
+  .modal__grid{grid-template-columns:1fr}
+  .modal__hero{aspect-ratio:16/9}
+  .lb__prev{left:.5rem}.lb__next{right:.5rem}
+}
+@media(max-width:640px){
+  .nav__links{position:fixed;inset:0;background:rgba(8,8,8,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .4s var(--ed);z-index:1000}
+  .nav__links.open{transform:translateX(0)}
+  .nav__links .nav__link{font-size:1.2rem;letter-spacing:.2em}
+  .nav__toggle{display:block}
+  .pc{flex:0 0 calc(100% - 0rem)}
+  .gal__grid{grid-template-columns:1fr 1fr}
+  .gal__item.wide{grid-column:span 1}.gal__item.wide img{aspect-ratio:3/2}
+  .player__pb{width:60px;height:60px}.player__pb svg{width:22px;height:22px}
+  .pl__i{grid-template-columns:80px 1fr;gap:.6rem;padding:.6rem .75rem}
+  .stats-bar{grid-template-columns:1fr 1fr}
+  .modal__body{padding:1.5rem}
+  .modal__stills-grid{grid-template-columns:1fr 1fr}
+  .modal__hero-text{left:1.5rem;right:1.5rem;bottom:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <a href="#" class="nav__logo"><span>BFTD</span> FILMS</a>
+  <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav__links">
+    <li><a href="#" class="nav__link active">Home</a></li>
+    <li><a href="#projects" class="nav__link">Projects</a></li>
+    <li><a href="#video" class="nav__link">Video</a></li>
+    <li><a href="#gallery" class="nav__link">Gallery</a></li>
+    <li><a href="#about" class="nav__link">About</a></li>
+    <li><a href="#contact" class="nav__link">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"><img src="https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png" alt="Convoy scene from Zarqawi" loading="eager"></div>
+  <div class="hero__ov"></div><div class="hero__vig"></div>
+  <div class="hero__c">
+    <p class="hero__pre">A Richie Smyth Production Company</p>
+    <h1 class="hero__t">Back From<br>The Dead<em>Films</em></h1>
+    <p class="hero__tag">Visualising truth, passion and imagination.</p>
+  </div>
+  <div class="hero__sc"><span>Scroll</span><div class="hero__scl"></div></div>
+</section>
+
+<!-- ========================================
+     PROJECT CAROUSEL
+     ======================================== -->
+<section class="sec carousel-sec" id="projects">
+  <div class="con">
+    <div class="carousel-header rv">
+      <div class="sec__h" style="margin-bottom:0">
+        <p class="sec__l">Featured Work</p>
+        <h2 class="sec__t">Productions</h2>
+      </div>
+      <div class="carousel-nav">
+        <span class="carousel-counter" id="carCounter">1 / 5</span>
+        <button class="carousel-btn" id="carPrev" aria-label="Previous" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-btn" id="carNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-wrap rv rv1">
+    <div class="con">
+      <div class="carousel-track" id="carTrack"></div>
+      <div class="carousel-dots" id="carDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="projModal">
+  <div class="modal__bg" id="modalBg"></div>
+  <div class="modal__container" id="modalCon">
+    <button class="modal__close" id="modalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- VIDEO THEATRE -->
+<section class="sec vt" id="video">
+  <div class="con">
+    <div class="sec__h rv"><p class="sec__l">Screening Room</p><h2 class="sec__t">Video</h2></div>
+    <div class="vt__grid rv">
+      <div class="player" id="mainPlayer">
+        <video id="mainVideo" preload="metadata" poster="https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+        </video>
+        <div class="player__tb"><p class="player__np">Now Playing</p><p class="player__vt" id="pTitle">Zarqawi — Official Teaser</p></div>
+        <div class="player__ov" id="pOv"><button class="player__pb" id="pBtn" aria-label="Play"><svg viewBox="0 0 24 24"><polygon class="pi" points="6,3 20,12 6,21"/><g class="pp"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></g></svg></button></div>
+        <div class="player__ctrl">
+          <div class="player__prog" id="pProg"><div class="player__pf" id="pFill"></div></div>
+          <span class="player__time" id="pTime">0:00 / 0:00</span>
+          <div class="player__vw"><button class="player__cb" id="pMute" aria-label="Mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button><input class="player__vs" id="pVol" type="range" min="0" max="1" step=".05" value=".8"></div>
+          <button class="player__cb" id="pFs" aria-label="Fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+        </div>
+      </div>
+      <div class="pl"><div class="pl__hd"><span class="pl__ht">Playlist</span><span class="pl__ct" id="plCt"></span></div><ul class="pl__items" id="plItems"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec gal" id="gallery">
+  <div class="con">
+    <div class="sec__h rv"><p class="sec__l">Behind The Lens</p><h2 class="sec__t">Gallery</h2></div>
+    <div class="gal__fil rv">
+      <button class="gal__fb active" data-filter="all">All</button>
+      <button class="gal__fb" data-filter="zarqawi">Zarqawi</button>
+      <button class="gal__fb" data-filter="dechert">Dechert Incident</button>
+      <button class="gal__fb" data-filter="bts">Behind The Scenes</button>
+    </div>
+    <div class="gal__grid rv" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <div class="lb__in">
+    <span class="lb__ctr" id="lbCtr"></span>
+    <button class="lb__close" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <button class="lb__nav lb__prev" id="lbP" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <img class="lb__img" id="lbImg" src="" alt="">
+    <button class="lb__nav lb__next" id="lbN" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    <p class="lb__cap" id="lbCap"></p>
+  </div>
+</div>
+
+<!-- ABOUT US -->
+<section class="sec about-us" id="about">
+  <div class="con">
+    <div class="sec__h rv"><p class="sec__l">About Us</p><h2 class="sec__t">The Company</h2></div>
+    <div class="manifesto rv">
+      <p class="manifesto__quote">Every great story deserves to be told. We find the ones that have been buried, forgotten, or silenced — and bring them back from the dead.</p>
+      <p class="manifesto__attr">— Back From The Dead Films</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-collage rv">
+        <div class="about-collage__main"><img src="https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png" alt="Desert shoot" loading="lazy"></div>
+        <div class="about-collage__float"><img src="https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg" alt="Tactical scene" loading="lazy"></div>
+        <div class="about-collage__accent"></div>
+      </div>
+      <div class="about-story rv rv1">
+        <h3>Reviving Cinema from Los Angeles</h3>
+        <p><strong>Back From The Dead Films</strong> is a creatively driven, global production company headquartered in Los Angeles. We specialise in crafting groundbreaking movies and documentaries rooted in real events — stories that matter, stories that challenge, stories the world needs to hear.</p>
+        <p>Founded by filmmaker <strong>Richie Smyth</strong>, BFTD was born from a singular conviction: the most powerful stories are the ones that actually happened. From the front lines of geopolitical conflict to the corridors of corporate power, we go where the truth takes us.</p>
+        <p>Our approach is simple: pair fearless investigative storytelling with world-class cinematic craft. No compromises on substance. No compromises on style.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv"><div class="pillar__icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4 class="pillar__title">Truth First</h4><p class="pillar__text">Every project begins with rigorous research and real-world immersion. We don't invent stories — we uncover them.</p></div>
+      <div class="pillar rv rv1"><div class="pillar__icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h4 class="pillar__title">Cinematic Craft</h4><p class="pillar__text">True stories deserve blockbuster production value. We bring Hollywood craft to stories that Hollywood overlooks.</p></div>
+      <div class="pillar rv rv2"><div class="pillar__icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h4 class="pillar__title">Global Reach</h4><p class="pillar__text">Our stories cross borders. From the Middle East to the halls of international finance, we produce content that resonates worldwide.</p></div>
+    </div>
+    <div class="stats-bar rv">
+      <div class="stat"><p class="stat__num" data-target="2">0</p><p class="stat__label">Productions in Development</p></div>
+      <div class="stat"><p class="stat__num" data-target="3">0</p><p class="stat__label">Countries Filmed</p></div>
+      <div class="stat"><p class="stat__num" data-target="15">0</p><p class="stat__label">Years Experience</p></div>
+      <div class="stat"><p class="stat__num" data-target="1">0</p><p class="stat__label">Mission: Tell The Truth</p></div>
+    </div>
+    <div class="sec__h rv"><p class="sec__l">The Filmmaker</p><h2 class="sec__t">Richie Smyth</h2></div>
+    <div class="team-spot rv">
+      <div class="team-spot__portrait"><img src="https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png" alt="Richie Smyth" loading="lazy"></div>
+      <div class="team-spot__info">
+        <h3>Richie Smyth</h3>
+        <p class="team-spot__role">Founder · Director · Writer · Producer</p>
+        <p class="team-spot__bio">Richie Smyth is the creative force behind Back From The Dead Films. A filmmaker with an instinct for stories at the intersection of truth and cinema, Richie has spent over a decade developing and producing content that pushes boundaries.</p>
+        <p class="team-spot__bio">His work spans feature films, documentary series, music videos and branded content — but his passion lies in long-form narrative rooted in real events. With projects currently in development including <strong>Zarqawi</strong> and <strong>The Dechert Incident</strong>, Richie is building a slate that proves truth is always stranger than fiction.</p>
+        <div class="team-spot__roles"><span class="role-tag">Director</span><span class="role-tag">Writer</span><span class="role-tag">Producer</span><span class="role-tag">Founder</span></div>
+        <a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="btn">View on Vimeo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="con">
+    <div class="sec__h rv"><p class="sec__l">Get In Touch</p><h2 class="sec__t">Contact</h2></div>
+    <div class="contact__grid">
+      <div class="contact__info rv">
+        <div class="contact__detail"><p class="contact__dl">Email</p><p class="contact__dv"><a href="mailto:info@bftdfilms.com">info@bftdfilms.com</a></p></div>
+        <div class="contact__detail"><p class="contact__dl">Location</p><p class="contact__dv">Los Angeles, California</p></div>
+        <div class="contact__detail"><p class="contact__dl">Follow</p>
+          <div class="contact__socials">
+            <a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="contact__sl" aria-label="Vimeo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.42c-.09 2.1-1.56 4.97-4.39 8.62C14.7 19.69 12.34 21.5 10.37 21.5c-1.22 0-2.25-1.13-3.09-3.38-.56-2.06-1.12-4.12-1.69-6.18-.62-2.25-1.29-3.38-2-3.38-.16 0-.7.33-1.63.98L1 8.32c1.03-.9 2.04-1.81 3.04-2.72C5.47 4.36 6.6 3.69 7.39 3.62c1.42-.14 2.29.84 2.61 2.92.35 2.25.59 3.65.72 4.18.4 1.81.84 2.72 1.31 2.72.37 0 .93-.59 1.67-1.76.75-1.17 1.14-2.07 1.2-2.69.1-1.03-.3-1.55-1.2-1.55-.43 0-.87.1-1.33.29.88-2.89 2.56-4.3 5.05-4.21 1.84.05 2.71 1.25 2.58 3.6z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="form rv rv1">
+        <div><label class="form__l" for="name">Name</label><input class="form__i" type="text" id="name" placeholder="Your name"></div>
+        <div><label class="form__l" for="email">Email</label><input class="form__i" type="email" id="email" placeholder="your@email.com"></div>
+        <div><label class="form__l" for="msg">Message</label><textarea class="form__ta" id="msg" placeholder="Tell us about your project..."></textarea></div>
+        <div class="form__s"><button type="button" class="btn">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft"><div class="con"><div class="ft__in">
+  <p class="ft__c">&copy; 2026 Back From The Dead Films. All rights reserved.</p>
+  <ul class="ft__ls"><li><a href="#" class="ft__l">Legal</a></li><li><a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="ft__l">Vimeo</a></li></ul>
+</div></div></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+
+// ============================================
+// PROJECT DATA — 10 projects with full synopsis
+// ============================================
+const projects=[
+{id:'zarqawi',title:'Zarqawi',genre:'Feature Film — Thriller',status:'In Development',
+ img:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',
+ logline:'A CIA agent must go rogue in an attempt to stop the world\'s greatest new terrorist since Bin Laden.',
+ tagline:'Some targets can\'t be reached through official channels.',
+ synopsis:`<p>In the chaotic aftermath of the Iraq invasion, a seasoned CIA operative finds himself sidelined by bureaucracy while Abu Musab al-Zarqawi — the most dangerous terrorist since Osama bin Laden — builds a network of terror across the Middle East.</p><p>When official channels fail and the body count rises, our protagonist makes a fateful decision: go rogue. Operating outside the chain of command, he assembles a team of local assets and disavowed agents to track Zarqawi through the lawless tribal regions of Iraq and Jordan.</p><p>Based on extensively researched true events, Zarqawi is a taut, morally complex thriller that explores the human cost of the War on Terror and asks an uncomfortable question: what happens when following orders means letting the worst happen?</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Film',runtime:'Est. 120 min',year:'2026',
+ tags:['Thriller','Based on True Events','CIA','Middle East','War on Terror'],
+ stills:['https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png','https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg','https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png']},
+
+{id:'dechert',title:'The Dechert Incident',genre:'Documentary — Geo-Political Thriller',status:'In Development',
+ img:'https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png',
+ logline:'A geo-political thriller following two men targeted by a powerful law firm for exposing an international financial crime syndicate originating in Iran.',
+ tagline:'The truth was supposed to stay buried.',
+ synopsis:`<p>When two whistleblowers stumble upon evidence of an international financial crime syndicate stretching from Tehran to the trading floors of London and Dubai, they believe the truth will set them free. Instead, it makes them targets.</p><p>Dechert LLP — one of the world's most powerful law firms — is alleged to have been deployed to silence them. What follows is a labyrinthine tale of corporate espionage, legal intimidation, and geopolitical intrigue that spans three continents and implicates some of the most powerful institutions in global finance.</p><p>The Dechert Incident is a multi-part documentary series that follows the real-time investigation, featuring exclusive access to the whistleblowers, their legal teams, and the mounting evidence of a cover-up that reaches the highest levels of international power.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Documentary Series',runtime:'4 × 60 min',year:'2026',
+ tags:['Documentary','Financial Crime','Iran','Whistleblower','Corporate Espionage'],
+ stills:['https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png','https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png','https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png']},
+
+{id:'ghost-pipeline',title:'Ghost Pipeline',genre:'Documentary — Investigative',status:'Research Phase',
+ img:'https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png',
+ logline:'An investigation into a network of phantom oil shipments that fund sanctioned regimes while the world looks the other way.',
+ tagline:'Follow the oil. Find the money. Expose the lie.',
+ synopsis:`<p>Billions of dollars in crude oil move through a shadow network of shell companies, falsified shipping documents, and complicit intermediaries — funding regimes that the international community has publicly vowed to isolate.</p><p>Ghost Pipeline follows a team of investigative journalists and former intelligence analysts as they trace the money from oil fields in sanctioned nations through the labyrinth of offshore finance to the doorsteps of seemingly legitimate European banks.</p><p>This documentary exposes how the global sanctions regime has been systematically undermined, and asks who profits from the world's most dangerous blind spot.</p>`,
+ director:'Richie Smyth',writer:'TBA',producer:'BFTD Films',
+ format:'Feature Documentary',runtime:'Est. 90 min',year:'2027',
+ tags:['Documentary','Oil Trade','Sanctions','Investigative','Finance'],
+ stills:['https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png','https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png','https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png']},
+
+{id:'the-fixer',title:'The Fixer',genre:'Feature Film — Political Thriller',status:'In Development',
+ img:'https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg',
+ logline:'A disgraced political consultant is hired to manage an impossible crisis — only to discover she was the one being managed all along.',
+ tagline:'Everyone is someone else\'s puppet.',
+ synopsis:`<p>After a career-ending scandal forces her out of Washington, former political strategist Elena Voss retreats to obscurity. But when a mysterious client offers her an astronomical fee to manage a brewing international crisis, she can't refuse.</p><p>As Elena pulls the strings of media narratives, diplomatic back-channels, and public perception, she begins to realise the crisis she's managing was engineered — and she's not the puppet master, she's the puppet.</p><p>The Fixer is a twisting political thriller about the machinery of power, the price of truth, and what happens when the smartest person in the room discovers she's been outplayed.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Film',runtime:'Est. 110 min',year:'2027',
+ tags:['Thriller','Political','Espionage','Female Lead','Washington'],
+ stills:['https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg','https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png','https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png']},
+
+{id:'red-mercury',title:'Red Mercury',genre:'Feature Film — Action Thriller',status:'Script Phase',
+ img:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',
+ logline:'When a mythical Soviet-era weapon resurfaces on the black market, an MI6 agent races against time before it reaches the highest bidder.',
+ tagline:'The Cold War never ended. It just changed buyers.',
+ synopsis:`<p>Red Mercury — a substance long dismissed as Cold War myth — has resurfaced. An encrypted auction on the dark web offers what claims to be the last remaining stockpile to the highest bidder, with nation-states and non-state actors scrambling to secure it.</p><p>MI6 dispatches their most unconventional agent to infiltrate the auction network. But as he gets closer to the source, he discovers the substance may be less important than the information that comes with it — intelligence that could topple governments.</p><p>A white-knuckle action thriller that blends the tradecraft of le Carré with the kinetic energy of a modern espionage blockbuster.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Film',runtime:'Est. 115 min',year:'2028',
+ tags:['Action','Thriller','MI6','Cold War','Black Market'],
+ stills:['https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png','https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg','https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png']},
+
+{id:'silent-border',title:'Silent Border',genre:'Documentary — Human Rights',status:'Pre-Production',
+ img:'https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png',
+ logline:'The untold story of a community living on a border that exists on no map — and the forces trying to erase them entirely.',
+ tagline:'Invisible borders. Invisible people.',
+ synopsis:`<p>In a remote region where three nations meet, a community of several thousand people exists in a legal and geographic limbo. Their land appears on no official map. Their people hold no recognised citizenship. And a land deal worth billions threatens to displace them permanently.</p><p>Silent Border follows the community's fight for recognition over three years, documenting their daily lives, their legal battles, and the mounting pressure from corporate and state interests who want them gone.</p><p>A deeply human documentary about identity, belonging, and the quiet violence of erasure.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Documentary',runtime:'Est. 95 min',year:'2027',
+ tags:['Documentary','Human Rights','Statelessness','Land Rights','Social Justice'],
+ stills:['https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png','https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png','https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png']},
+
+{id:'vow-of-silence',title:'Vow of Silence',genre:'Feature Film — Drama Thriller',status:'Script Phase',
+ img:'https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png',
+ logline:'A journalist investigating a monastery uncovers a conspiracy that the Catholic Church has protected for centuries.',
+ tagline:'Faith demands silence. Truth demands a voice.',
+ synopsis:`<p>When investigative journalist Marcus Hale receives an anonymous package containing centuries-old documents from a remote Italian monastery, he dismisses it as a hoax. But when the monk who sent them is found dead, Marcus travels to Italy to uncover the truth.</p><p>What he finds within the monastery walls is a conspiracy far older and far more dangerous than he imagined — one that the Catholic Church has gone to extraordinary lengths to protect, and one that powerful people will kill to keep hidden.</p><p>Vow of Silence is a slow-burning thriller that explores the tension between institutional power and individual conscience, faith and truth, obedience and justice.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Film',runtime:'Est. 125 min',year:'2028',
+ tags:['Drama','Thriller','Church','Conspiracy','Italy'],
+ stills:['https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png','https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png','https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg']},
+
+{id:'burned',title:'Burned',genre:'Documentary — Tech / Corporate',status:'Research Phase',
+ img:'https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png',
+ logline:'Inside the collapse of a billion-dollar tech startup and the founder who convinced the world he could change it.',
+ tagline:'He didn\'t break the rules. He rewrote them.',
+ synopsis:`<p>At its peak, the company was valued at $4.2 billion. Its founder graced magazine covers, spoke at Davos, and was hailed as the next Steve Jobs. Eighteen months later, it was all gone — and thousands of employees, investors, and customers were left holding nothing.</p><p>Burned traces the meteoric rise and catastrophic fall through exclusive interviews with insiders, investors who lost millions, and the journalists who first raised the alarm. It's a story about charisma, greed, and the dangerous cult of the founder in Silicon Valley.</p><p>This is not the story of an anomaly. It's the story of a system that makes anomalies inevitable.</p>`,
+ director:'Richie Smyth',writer:'TBA',producer:'BFTD Films',
+ format:'Documentary Series',runtime:'3 × 55 min',year:'2027',
+ tags:['Documentary','Tech','Startup','Fraud','Silicon Valley'],
+ stills:['https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png','https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png','https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png']},
+
+{id:'the-wire-room',title:'The Wire Room',genre:'Feature Film — Crime Thriller',status:'Concept',
+ img:'https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg',
+ logline:'A rookie FBI analyst monitoring a wiretap accidentally hears a murder being planned — and has 90 minutes to stop it without blowing a years-long investigation.',
+ tagline:'She can hear everything. She can\'t do anything.',
+ synopsis:`<p>Agent Sarah Chen is eight weeks into her first real assignment: monitoring a wiretap on a mid-level organised crime figure as part of a sprawling RICO investigation. It's tedious work — until the night she intercepts a call that changes everything.</p><p>A murder is being planned. The target: an innocent witness. The timeline: ninety minutes. But if Sarah intervenes, she blows a two-year, multi-agency investigation that could dismantle an entire criminal network.</p><p>Set almost entirely in a single room, The Wire Room is a real-time thriller about impossible choices, the weight of inaction, and the human beings behind the headphones.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Film',runtime:'Est. 95 min',year:'2028',
+ tags:['Crime','Thriller','FBI','Real-Time','Female Lead'],
+ stills:['https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg','https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png','https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png']},
+
+{id:'last-frequency',title:'Last Frequency',genre:'Feature Film — Sci-Fi Thriller',status:'Concept',
+ img:'https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png',
+ logline:'A radio astronomer picks up a signal from deep space that shouldn\'t exist — and the message it carries could end civilisation as we know it.',
+ tagline:'We were never supposed to hear this.',
+ synopsis:`<p>Dr. Amara Osei works alone at a decommissioned radio telescope in the Welsh countryside. When her equipment picks up a repeating signal from a region of space thought to be empty, she initially assumes it's interference. But the signal has structure. It has intent.</p><p>As Amara decodes the transmission, she discovers it contains information that challenges the foundations of physics, biology, and human history. Governments and corporations race to control the discovery. Amara must decide: share the truth with the world, or protect humanity from knowledge it may not survive.</p><p>Last Frequency is a cerebral sci-fi thriller in the tradition of Contact and Arrival — grounded, human, and deeply unsettling.</p>`,
+ director:'Richie Smyth',writer:'Richie Smyth',producer:'BFTD Films',
+ format:'Feature Film',runtime:'Est. 130 min',year:'2029',
+ tags:['Sci-Fi','Thriller','First Contact','Female Lead','Science'],
+ stills:['https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png','https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png','https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png']}
+];
+
+// ============================================
+// CAROUSEL
+// ============================================
+const track=document.getElementById('carTrack'),dots=document.getElementById('carDots'),counter=document.getElementById('carCounter'),prevBtn=document.getElementById('carPrev'),nextBtn=document.getElementById('carNext');
+let carIdx=0, perView=2, totalPages=1;
+const arrowSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+
+function buildCarousel(){
+  track.innerHTML='';dots.innerHTML='';
+  projects.forEach((p,i)=>{
+    const card=document.createElement('div');card.className='pc';card.dataset.idx=i;
+    card.innerHTML=`<div class="pc__img"><img src="${p.img}" alt="${p.title}" loading="lazy"><div class="pc__ov"></div><span class="pc__st">${p.status}</span><span class="pc__num">${String(i+1).padStart(2,'0')}</span></div><div class="pc__b"><p class="pc__g">${p.genre}</p><h3 class="pc__tt">${p.title}</h3><p class="pc__ll">${p.logline}</p><button class="pc__cta" data-project="${i}">View Project ${arrowSvg}</button></div>`;
+    track.appendChild(card);
+  });
+  calcPerView();
+  // Click handler for cards
+  track.querySelectorAll('.pc__cta').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();openModal(parseInt(btn.dataset.project))}));
+  track.querySelectorAll('.pc').forEach(c=>c.addEventListener('click',()=>openModal(parseInt(c.dataset.idx))));
+}
+
+function calcPerView(){
+  perView=window.innerWidth<=640?1:2;
+  totalPages=Math.ceil(projects.length/perView);
+  buildDots();
+  goTo(Math.min(carIdx,totalPages-1));
+}
+
+function buildDots(){
+  dots.innerHTML='';
+  for(let i=0;i<totalPages;i++){
+    const d=document.createElement('button');d.className='carousel-dot'+(i===carIdx?' active':'');d.ariaLabel=`Page ${i+1}`;
+    d.addEventListener('click',()=>goTo(i));dots.appendChild(d);
+  }
+}
+
+function goTo(idx){
+  carIdx=Math.max(0,Math.min(idx,totalPages-1));
+  const cardW=track.children[0]?.offsetWidth||0;
+  const gap=parseFloat(getComputedStyle(track).gap)||16;
+  track.style.transform=`translateX(-${carIdx*perView*(cardW+gap)}px)`;
+  counter.textContent=`${carIdx+1} / ${totalPages}`;
+  prevBtn.disabled=carIdx===0;nextBtn.disabled=carIdx>=totalPages-1;
+  dots.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===carIdx));
+}
+
+prevBtn.addEventListener('click',()=>goTo(carIdx-1));
+nextBtn.addEventListener('click',()=>goTo(carIdx+1));
+
+// Touch/drag support
+let dragStart=0,dragX=0,isDragging=false;
+track.addEventListener('pointerdown',e=>{if(e.target.closest('.pc__cta'))return;isDragging=true;dragStart=e.clientX;dragX=0;track.classList.add('dragging');track.setPointerCapture(e.pointerId)});
+track.addEventListener('pointermove',e=>{if(!isDragging)return;dragX=e.clientX-dragStart;const cardW=track.children[0]?.offsetWidth||0;const gap=parseFloat(getComputedStyle(track).gap)||16;const base=carIdx*perView*(cardW+gap);track.style.transform=`translateX(${-base+dragX}px)`});
+track.addEventListener('pointerup',()=>{if(!isDragging)return;isDragging=false;track.classList.remove('dragging');if(Math.abs(dragX)>60){dragX<0?goTo(carIdx+1):goTo(carIdx-1)}else{goTo(carIdx)}});
+
+// Keyboard nav for carousel
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('projModal').classList.contains('open'))return;
+  if(document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='ArrowLeft')goTo(carIdx-1);
+  if(e.key==='ArrowRight')goTo(carIdx+1);
+});
+
+window.addEventListener('resize',()=>calcPerView());
+buildCarousel();
+
+// ============================================
+// PROJECT MODAL
+// ============================================
+const modal=document.getElementById('projModal'),modalBg=document.getElementById('modalBg'),modalClose=document.getElementById('modalClose'),modalContent=document.getElementById('modalContent');
+
+function openModal(idx){
+  const p=projects[idx];
+  modalContent.innerHTML=`
+    <div class="modal__hero">
+      <img src="${p.img}" alt="${p.title}">
+      <div class="modal__hero-ov"></div>
+      <div class="modal__hero-text">
+        <p class="modal__hero-genre">${p.genre}</p>
+        <h2 class="modal__hero-title">${p.title}</h2>
+        <p class="modal__hero-tag">${p.tagline}</p>
+      </div>
+    </div>
+    <div class="modal__body">
+      <div class="modal__grid">
+        <div class="modal__synopsis">
+          <h3>Synopsis</h3>
+          ${p.synopsis}
+        </div>
+        <div class="modal__sidebar">
+          <div class="modal__meta"><p class="modal__meta-label">Director</p><p class="modal__meta-value">${p.director}</p></div>
+          <div class="modal__meta"><p class="modal__meta-label">Writer</p><p class="modal__meta-value">${p.writer}</p></div>
+          <div class="modal__meta"><p class="modal__meta-label">Producer</p><p class="modal__meta-value">${p.producer}</p></div>
+          <div class="modal__meta"><p class="modal__meta-label">Format</p><p class="modal__meta-value">${p.format}</p></div>
+          <div class="modal__meta"><p class="modal__meta-label">Runtime</p><p class="modal__meta-value">${p.runtime}</p></div>
+          <div class="modal__meta"><p class="modal__meta-label">Status</p><p class="modal__meta-value" style="color:var(--accent);font-weight:500">${p.status}</p></div>
+          <div class="modal__meta"><p class="modal__meta-label">Year</p><p class="modal__meta-value">${p.year}</p></div>
+          <div><p style="font-family:var(--fm);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem">Tags</p><div class="modal__tags">${p.tags.map(t=>`<span class="modal__tag">${t}</span>`).join('')}</div></div>
+        </div>
+      </div>
+      <div class="modal__stills">
+        <h4>Production Stills</h4>
+        <div class="modal__stills-grid">${p.stills.map(s=>`<img src="${s}" alt="${p.title} still" loading="lazy">`).join('')}</div>
+      </div>
+    </div>`;
+  modal.classList.add('open');document.body.style.overflow='hidden';
+}
+
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+modalClose.addEventListener('click',closeModal);
+modalBg.addEventListener('click',closeModal);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
+
+// ============================================
+// NAV
+// ============================================
+const nav=document.querySelector('.nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const tog=document.querySelector('.nav__toggle'),nls=document.querySelector('.nav__links');
+tog.addEventListener('click',()=>{tog.classList.toggle('open');nls.classList.toggle('open')});
+nls.querySelectorAll('.nav__link').forEach(l=>l.addEventListener('click',()=>{tog.classList.remove('open');nls.classList.remove('open')}));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}));
+
+// ============================================
+// REVEAL ON SCROLL
+// ============================================
+const rvs=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  rvs.forEach(el=>obs.observe(el));
+}else rvs.forEach(el=>el.classList.add('vis'));
+
+// ============================================
+// STAT COUNTER
+// ============================================
+const statNums=document.querySelectorAll('.stat__num[data-target]');
+if('IntersectionObserver' in window){
+  const sObs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){const el=e.target,target=parseInt(el.dataset.target);let c=0;const step=()=>{c+=Math.ceil(target/30);if(c>=target){el.textContent=target;return}el.textContent=c;requestAnimationFrame(step)};step();sObs.unobserve(el)}
+  }),{threshold:.5});
+  statNums.forEach(el=>sObs.observe(el));
+}
+
+// ============================================
+// VIDEO PLAYER
+// ============================================
+const playlist=[
+  {title:'Zarqawi — Official Teaser',sub:'Feature Film · 2026',src:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',poster:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',duration:'0:15'},
+  {title:'The Dechert Incident — Trailer',sub:'Documentary Series',src:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',poster:'https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png',duration:'0:15'},
+  {title:"Director's Showreel 2025",sub:'Richie Smyth',src:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',poster:'https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png',duration:'1:02'},
+  {title:'Behind The Scenes — Desert',sub:'Production Diary',src:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',poster:'https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png',duration:'0:15'}
+];
+const player=document.getElementById('mainPlayer'),video=document.getElementById('mainVideo'),playBtn=document.getElementById('pBtn'),pOv=document.getElementById('pOv'),pProg=document.getElementById('pProg'),pFill=document.getElementById('pFill'),pTime=document.getElementById('pTime'),pVol=document.getElementById('pVol'),pMute=document.getElementById('pMute'),pFs=document.getElementById('pFs'),pTitle=document.getElementById('pTitle'),plEl=document.getElementById('plItems'),plCt=document.getElementById('plCt');
+let ci=0;plCt.textContent=playlist.length+' videos';
+playlist.forEach((item,i)=>{const li=document.createElement('li');li.className='pl__i'+(i===0?' active':'');li.innerHTML=`<div class="pl__th"><img src="${item.poster}" alt="${item.title}" loading="lazy"><span class="pl__dur">${item.duration}</span><div class="pl__play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="pl__meta"><p class="pl__it">${item.title}</p><p class="pl__is">${item.sub}</p></div>`;li.addEventListener('click',()=>loadV(i));plEl.appendChild(li)});
+function loadV(i){ci=i;const item=playlist[i];video.src=item.src;video.poster=item.poster;pTitle.textContent=item.title;video.load();video.play();player.classList.add('playing');plEl.querySelectorAll('.pl__i').forEach((el,j)=>el.classList.toggle('active',j===i))}
+function fmt(s){const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+sec.toString().padStart(2,'0')}
+function togglePlay(){if(video.paused){video.play();player.classList.add('playing')}else{video.pause();player.classList.remove('playing')}}
+playBtn.addEventListener('click',e=>{e.stopPropagation();togglePlay()});pOv.addEventListener('click',togglePlay);video.addEventListener('click',togglePlay);
+video.addEventListener('timeupdate',()=>{if(video.duration){pFill.style.width=(video.currentTime/video.duration*100)+'%';pTime.textContent=fmt(video.currentTime)+' / '+fmt(video.duration)}});
+pProg.addEventListener('click',e=>{video.currentTime=(e.offsetX/pProg.offsetWidth)*video.duration});
+pVol.addEventListener('input',()=>{video.volume=pVol.value});
+pMute.addEventListener('click',()=>{video.muted=!video.muted;pVol.value=video.muted?0:video.volume});
+pFs.addEventListener('click',()=>{if(!document.fullscreenElement)player.requestFullscreen?.();else document.exitFullscreen?.()});
+video.addEventListener('ended',()=>{player.classList.remove('playing');if(ci<playlist.length-1)loadV(ci+1)});
+
+// ============================================
+// GALLERY
+// ============================================
+const galData=[
+  {src:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',title:'Convoy at Dusk',cat:'zarqawi',cls:'wide'},
+  {src:'https://cdn.durable.co/blocks/15YaCOgiU9Wdx5xHjxqlcJYF1GVSYHGN6WPCOTamaFdsBd0T37B101k2hXspxCg2.jpg',title:'Tactical Preparation',cat:'zarqawi',cls:''},
+  {src:'https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png',title:'Dechert Key Art',cat:'dechert',cls:''},
+  {src:'https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png',title:'Desert Shoot',cat:'bts',cls:''},
+  {src:'https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png',title:'Richie on Set',cat:'bts',cls:'tall'},
+  {src:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',title:'Night Operations',cat:'zarqawi',cls:''},
+];
+const galGrid=document.getElementById('galGrid');
+const catLbl={zarqawi:'Zarqawi',dechert:'Dechert Incident',bts:'Behind The Scenes'};
+let filtered=[...galData];
+function renderGal(filter='all'){
+  galGrid.innerHTML='';filtered=filter==='all'?[...galData]:galData.filter(d=>d.cat===filter);
+  filtered.forEach((item,i)=>{const d=document.createElement('div');d.className='gal__item '+item.cls;d.innerHTML=`<img src="${item.src}" alt="${item.title}" loading="lazy"><div class="gal__item-ov"><p class="gal__item-c">${catLbl[item.cat]||item.cat}</p><p class="gal__item-t">${item.title}</p></div><div class="gal__item-x"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>`;d.addEventListener('click',()=>openLB(i));galGrid.appendChild(d)});
+}
+document.querySelectorAll('.gal__fb').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.gal__fb').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderGal(b.dataset.filter)}));
+renderGal();
+
+// ============================================
+// LIGHTBOX
+// ============================================
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),lbCtr=document.getElementById('lbCtr');
+let lbi=0;
+function openLB(i){lbi=i;updLB();lb.classList.add('open');document.body.style.overflow='hidden'}
+function updLB(){const item=filtered[lbi];lbImg.src=item.src;lbImg.alt=item.title;lbCap.textContent=item.title+' — '+(catLbl[item.cat]||item.cat);lbCtr.textContent=(lbi+1)+' / '+filtered.length}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('lbX').addEventListener('click',closeLB);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
+document.getElementById('lbP').addEventListener('click',e=>{e.stopPropagation();lbi=(lbi-1+filtered.length)%filtered.length;updLB()});
+document.getElementById('lbN').addEventListener('click',e=>{e.stopPropagation();lbi=(lbi+1)%filtered.length;updLB()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbi=(lbi-1+filtered.length)%filtered.length;updLB()}if(e.key==='ArrowRight'){lbi=(lbi+1)%filtered.length;updLB()}});
+
+});
+</script>
+</body>
+</html>
