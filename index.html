@@ -742,21 +742,17 @@ if('IntersectionObserver' in window){
 // 5. Set title, sub (subtitle), thumb (thumbnail URL), dur (duration)
 // =============================================
 const reelData=[
-  // --- FEATURE FILMS ---
-  {platform:'vimeo',videoId:'184236062',title:'The Siege of Jadotville â Trailer',sub:'Netflix \u00b7 Jamie Dornan \u00b7 2016',cat:'film',
+  {platform:'youtube',videoId:'9_JHsiQTTmg',title:'The Siege of Jadotville',sub:'Netflix · Jamie Dornan · 2016',cat:'film',
    thumb:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',dur:'1:47'},
 
-  // --- MUSIC VIDEOS ---
-  {platform:'youtube',videoId:'ljbWslID3cE',title:'U2 \u2014 The Fly',sub:'Achtung Baby \u00b7 1991',cat:'music',
-   thumb:'https://cdn.durable.co/blocks/3bJkl1dKgMyEzta61aIAkuzRH23Z5LhgcQhGkc90UbMA9fLU1dJmqFjILRLHPYNS.png',dur:'4:53'},
+  {platform:'youtube',videoId:'5HDPenYIPtg',title:'U2 — The Fly',sub:'Achtung Baby · 1991',cat:'music',
+   thumb:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',dur:'4:53'},
 
-  // --- COMMERCIALS ---
-  // {platform:'vimeo',videoId:'REPLACE_ME',title:'Guinness \u2014 Surge',sub:'Brand Campaign',cat:'commercial',
-  //  thumb:'https://cdn.durable.co/blocks/fGQRAj4yEo39J0QMGDYpho4k4EcWqaMGeBlIiJpSYm7JuAQLXalccOao6Vnlk9vC.png',dur:'0:60'},
+  {platform:'youtube',videoId:'UzMOO8wpSis',title:'Three Ireland \'Tackle Homelessness\'',sub:'Richie Smyth',cat:'commercial',
+   thumb:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',dur:'3:20'},
 
-  // --- OTHER ---
-  {platform:'vimeo',videoId:'106698635',title:"Director's Showreel",sub:'Richie Smyth',cat:'other',
-   thumb:'https://cdn.durable.co/blocks/35Hjau7L7PNiEm0clAewt5QosdgJ0MI71RArUdZHWKtuLDlcR7axK4NeOUF0GWCC.png',dur:'3:20'}
+  {platform:'youtube',videoId:'X45hWP_QKt0',title:' The Verve - Slide Away',sub:'',cat:'film',
+   thumb:'https://cdn.durable.co/blocks/67ScCumnoD1FzcojT0HEWLFfY8tBhXoUwLjqwwcTJUxgBefv7s56ZWO2Qbhz2bKc.png',dur:''}
 ];
 let currentReelIdx=0;
 const reelGrid=document.getElementById('reelGrid');
