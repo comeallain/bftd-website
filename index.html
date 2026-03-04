@@ -526,12 +526,13 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
         </div>
       </div>
     <!-- CONTACT:END -->
-      <div class="form rv rv1">
-        <div><label class="form__l" for="name">Name</label><input class="form__i" type="text" id="name" placeholder="Your name"></div>
-        <div><label class="form__l" for="email">Email</label><input class="form__i" type="email" id="email" placeholder="your@email.com"></div>
-        <div><label class="form__l" for="msg">Message</label><textarea class="form__ta" id="msg" placeholder="Tell us about your project..."></textarea></div>
-        <div class="form__s"><button type="button" class="btn">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
-      </div>
+      <form class="form rv rv1" action="https://formspree.io/f/mojkaalv" method="POST">
+        <div><label class="form__l" for="name">Name</label><input class="form__i" type="text" name="name" id="name" placeholder="Your name" required></div>
+        <div><label class="form__l" for="email">Email</label><input class="form__i" type="email" name="email" id="email" placeholder="your@email.com" required></div>
+        <div><label class="form__l" for="msg">Message</label><textarea class="form__ta" name="message" id="msg" placeholder="Tell us about your project..." required></textarea></div>
+        <input type="hidden" name="_subject" value="New enquiry from BFTD website">
+        <div class="form__s"><button type="submit" class="btn">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
+      </form>
     </div>
   </div>
 </section>
