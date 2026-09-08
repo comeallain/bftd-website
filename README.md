@@ -35,6 +35,7 @@ So editing `content.json` directly on github.com is enough to publish.
 | `images/` | Site images. |
 | `404.html` | Not-found page. |
 | `privacy.md` | Privacy policy text. **Edit this**, not the generated page. |
+| `privacy-investors.md` | **Draft, not published.** Wording for the gated investor area, for when it launches. |
 | `page.html` | Shell for long-form content pages. |
 | `fonts/` | Self-hosted webfonts. `fonts.css` is **generated**. |
 | `tools/` | `fetch-fonts.sh` re-downloads the fonts. Rarely needed. |
