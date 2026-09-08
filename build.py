@@ -243,9 +243,10 @@ def r_contact(c):
 def r_footer(c, prefix=''):
     f = c['footer']
     home = prefix if prefix else '#'
-    links = ''.join(
-        f'<li><a href="{esc(l["url"])}" target="_blank" rel="noopener" class="ft__l">'
-        f'{esc(l["label"])}</a></li>' for l in f['links'])
+    def flink(l):
+        ext = '' if l['url'].startswith('/') else ' target="_blank" rel="noopener"'
+        return f'<li><a href="{esc(l["url"])}"{ext} class="ft__l">{esc(l["label"])}</a></li>'
+    links = ''.join(flink(l) for l in f['links'])
     return f'''<footer class="ft"><div class="con"><div class="ft__in">
   <a href="{home}" class="ft__logo"><svg class="hand-icon" aria-hidden="true"><use xlink:href="#bftd-hand" href="#bftd-hand"></use></svg>{esc(f['logoText'])}</a>
   <p class="ft__c">{esc(f['copyright'])}</p>
@@ -402,6 +403,114 @@ def build_project_pages(c, tpl):
                 print(f"  removed stale page: projects/{name}/")
     return written
 
+
+# ---------------------------------------------------------------- markdown
+def render_markdown(md):
+    """A deliberately small Markdown subset: headings, paragraphs, lists,
+    pipe tables, bold, italic, links and inline code. Enough for a policy
+    page, and small enough to read in one sitting."""
+    def inline(t):
+        t = esc(t)
+        t = re.sub(r'`([^`]+)`', r'<code>\1</code>', t)
+        t = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', t)
+        t = re.sub(r'(?<![A-Za-z0-9])_([^_]+)_(?![A-Za-z0-9])', r'<em>\1</em>', t)
+        t = re.sub(r'\[([^\]]+)\]\((https?://[^)\s]+|/[^)\s]*)\)', r'<a href="\2">\1</a>', t)
+        return t
+
+    lines = md.replace('\r\n', '\n').split('\n')
+    out, i = [], 0
+    while i < len(lines):
+        line = lines[i].rstrip()
+
+        if not line.strip():
+            i += 1; continue
+
+        m = re.match(r'^(#{1,4})\s+(.*)$', line)
+        if m:
+            lvl = len(m.group(1))
+            out.append(f'<h{lvl}>{inline(m.group(2))}</h{lvl}>')
+            i += 1; continue
+
+        # pipe table: header row, separator row, then body rows
+        if line.startswith('|') and i + 1 < len(lines) and re.match(r'^\|[\s:|-]+\|$', lines[i + 1].strip()):
+            cells = lambda r: [c.strip() for c in r.strip().strip('|').split('|')]
+            head = cells(line)
+            i += 2
+            body = []
+            while i < len(lines) and lines[i].strip().startswith('|'):
+                body.append(cells(lines[i])); i += 1
+            th = ''.join(f'<th>{inline(c)}</th>' for c in head)
+            tr = ''.join('<tr>' + ''.join(f'<td>{inline(c)}</td>' for c in row) + '</tr>' for row in body)
+            out.append(f'<div class="tablewrap"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>')
+            continue
+
+        if re.match(r'^[-*]\s+', line):
+            items = []
+            while i < len(lines) and re.match(r'^[-*]\s+', lines[i].rstrip()):
+                item = re.sub(r'^[-*]\s+', '', lines[i].rstrip())
+                i += 1
+                while i < len(lines) and lines[i].startswith('  ') and lines[i].strip() \
+                        and not re.match(r'^[-*]\s+', lines[i].strip()):
+                    item += ' ' + lines[i].strip(); i += 1
+                items.append(f'<li>{inline(item)}</li>')
+            out.append('<ul>' + ''.join(items) + '</ul>')
+            continue
+
+        # paragraph: consume until a blank line or the start of another block
+        para = []
+        while i < len(lines) and lines[i].strip() and not re.match(r'^(#{1,4}\s|[-*]\s|\|)', lines[i].strip()):
+            para.append(lines[i].strip()); i += 1
+        out.append(f'<p>{inline(" ".join(para))}</p>')
+
+    return '\n'.join(out)
+
+def build_content_pages(c, tpl):
+    """Renders each entry in content.json's `pages` list from its Markdown source."""
+    written = []
+    for pg in c.get('pages', []):
+        src = os.path.join(ROOT, pg['source'])
+        if not os.path.exists(src):
+            print(f"  ! missing page source: {pg['source']}", file=sys.stderr)
+            continue
+        with open(src, encoding='utf-8') as f:
+            md = f.read()
+        base = c['site']['url'].rstrip('/')
+        url = f'{base}/{pg["slug"]}/'
+        head = '\n'.join([
+            f'<title>{esc(pg["title"])} — {esc(c["site"]["title"])}</title>',
+            f'<meta name="description" content="{esc(pg["description"])}">',
+            f'<link rel="canonical" href="{esc(url)}">',
+            f'<meta property="og:title" content="{esc(pg["title"])}">',
+            f'<meta property="og:description" content="{esc(pg["description"])}">',
+            '<meta property="og:type" content="website">',
+            f'<meta property="og:url" content="{esc(url)}">',
+            f'<meta property="og:image" content="{esc(base + c["site"]["ogImage"])}">',
+            f'<meta property="og:site_name" content="{esc(c["site"]["title"])}">',
+            '<meta name="twitter:card" content="summary_large_image">',
+            '<meta name="theme-color" content="#080808">',
+        ])
+        slots = {
+            'HEAD_META': head,
+            'NAV_LINKS': r_nav(c, prefix='/'),
+            'PAGE_BODY': render_markdown(md),
+            'FOOTER':    r_footer(c, prefix='/'),
+            'ANALYTICS': esc(c['site']['analytics']),
+        }
+        out = tpl
+        for k, v in slots.items():
+            out = out.replace('{{' + k + '}}', v)
+        left = re.findall(r'\{\{(\w+)\}\}', out)
+        if left:
+            sys.exit(f"ERROR: page {pg['slug']} has unfilled slots: {sorted(set(left))}")
+        out = ('<!-- GENERATED FILE — do not edit.\n'
+               f'     Edit {pg["source"]}, then run: python3 build.py -->\n') + out
+        d = os.path.join(ROOT, pg['slug'])
+        os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8') as f:
+            f.write(out)
+        written.append(f'{pg["slug"]}/')
+    return written
+
 # ---------------------------------------------------------------- extras
 def write_extras(c, pages):
     s = c['site']
@@ -481,7 +590,13 @@ def main():
     pages = build_project_pages(c, ptpl)
     print(f"  {len(pages)} project pages")
 
-    write_extras(c, pages)
+    with open(os.path.join(ROOT, 'page.html'), encoding='utf-8') as f:
+        gtpl = f.read()
+    content_pages = build_content_pages(c, gtpl)
+    for p in content_pages:
+        print(f"  {p}")
+
+    write_extras(c, pages + content_pages)
     print("build ok")
 
 if __name__ == '__main__':

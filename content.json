@@ -321,6 +321,10 @@
     "copyright": "© 2026 Back From The Dead Productions. All rights reserved.",
     "links": [
       {
+        "label": "Legal",
+        "url": "/privacy/"
+      },
+      {
         "label": "Vimeo",
         "url": "https://vimeo.com/user11478169"
       },
@@ -329,5 +333,13 @@
         "url": "https://www.imdb.com/name/nm1100217/"
       }
     ]
-  }
+  },
+  "pages": [
+    {
+      "slug": "privacy",
+      "source": "privacy.md",
+      "title": "Privacy Policy",
+      "description": "How Back From The Dead Productions handles information collected through bftdfilms.com."
+    }
+  ]
 }
