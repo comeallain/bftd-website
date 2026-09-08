@@ -1,0 +1,257 @@
+# Sveltia CMS configuration for the BFTD website.
+#
+# IMPORTANT: every key that exists in content.json must be declared below.
+# The CMS rewrites the whole file from these fields on save, so an undeclared
+# key is silently deleted. tools/check_cms_config.py enforces this and runs
+# in CI — if you add a field to content.json, add it here too.
+
+backend:
+  name: github
+  repo: comeallain/bftd-website
+  branch: main
+  # ─────────────────────────────────────────────────────────────────────
+  # SET THIS before the admin will work. It is the URL of the Sveltia
+  # authenticator you deploy to Cloudflare Workers. See admin/README.md.
+  #   base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  # ─────────────────────────────────────────────────────────────────────
+
+media_folder: images
+public_folder: /images
+publish_mode: simple
+
+collections:
+  - name: content
+    label: Website
+    files:
+      - name: site
+        label: Website content
+        file: content.json
+        description: Everything on bftdfilms.com. Saving publishes within a minute or two.
+        fields:
+          # ---------------------------------------------------------- projects
+          - label: Productions
+            name: projects
+            widget: object
+            fields:
+              - {label: Section eyebrow, name: label, widget: string}
+              - {label: Section heading, name: heading, widget: string}
+              - label: Projects
+                name: items
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}} — {{fields.status}}'
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: URL slug
+                    name: id
+                    widget: string
+                    hint: >-
+                      Becomes the page address, e.g. "zarqawi" publishes at
+                      /projects/zarqawi/. Lower case, hyphens, no spaces.
+                      Changing it breaks any link already shared.
+                    pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Lower case letters, numbers and hyphens only']
+                  - {label: Format, name: type, widget: select, options: [Feature Film, Documentary, Series]}
+                  - {label: Status, name: status, widget: select, options: [In Development, In Pre-Production, In Production, In Post-Production, Completed, Released]}
+                  - {label: Poster image, name: img, widget: image}
+                  - {label: Logline, name: logline, widget: text, hint: One sentence. Shown on the card and used as the page description.}
+                  - label: Synopsis
+                    name: synopsis
+                    widget: list
+                    hint: One entry per paragraph.
+                    field: {label: Paragraph, name: paragraph, widget: text}
+
+          # -------------------------------------------------------------- reel
+          - label: Director's Reel
+            name: reel
+            widget: object
+            fields:
+              - {label: Section eyebrow, name: label, widget: string}
+              - {label: Section heading, name: heading, widget: string}
+              - {label: Poster image, name: poster, widget: image}
+              - {label: Now playing title, name: nowPlayingTitle, widget: string}
+              - {label: Now playing subtitle, name: nowPlayingMeta, widget: string}
+              - {label: Vimeo profile URL, name: vimeoUrl, widget: string}
+              - label: Videos
+                name: items
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Platform, name: platform, widget: select, options: [youtube, vimeo]}
+                  - label: Video ID
+                    name: videoId
+                    widget: string
+                    hint: >-
+                      YouTube: the part after "watch?v=". Vimeo: the number in
+                      the URL. Not the whole address.
+                  - {label: Category, name: cat, widget: select, options: [film, music, commercial, other]}
+                  - {label: Thumbnail, name: thumb, widget: image}
+                  - {label: Subtitle, name: sub, widget: string, required: false, hint: Optional. Left blank it simply is not shown.}
+                  - {label: Duration, name: dur, widget: string, required: false, hint: 'Optional, e.g. 4:53. Left blank it is not shown.'}
+              - label: Filter tabs
+                name: categories
+                widget: list
+                collapsed: true
+                summary: '{{fields.label}}'
+                fields:
+                  - {label: Key, name: key, widget: string}
+                  - {label: Label, name: label, widget: string}
+
+          # -------------------------------------------------------------- hero
+          - label: Hero
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Eyebrow, name: eyebrow, widget: string, required: false}
+              - label: Title lines
+                name: titleLines
+                widget: list
+                field: {label: Line, name: line, widget: string}
+              - {label: Italic sub-line, name: titleEm, widget: string, required: false}
+              - {label: Tagline, name: tagline, widget: string}
+              - {label: Background image, name: image, widget: image}
+              - {label: Image alt text, name: imageAlt, widget: string}
+
+          # ------------------------------------------------------------- about
+          - label: About
+            name: about
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Section eyebrow, name: label, widget: string}
+              - {label: Section heading, name: heading, widget: string}
+              - {label: Manifesto quote, name: manifestoQuote, widget: text}
+              - {label: Manifesto attribution, name: manifestoAttr, widget: string}
+              - {label: Collage main image, name: collageMain, widget: image}
+              - {label: Collage main alt text, name: collageMainAlt, widget: string}
+              - {label: Collage inset image, name: collageFloat, widget: image}
+              - {label: Collage inset alt text, name: collageFloatAlt, widget: string}
+              - {label: Story heading, name: storyHeading, widget: string}
+              - label: Story paragraphs
+                name: storyParagraphs
+                widget: list
+                hint: Basic HTML such as <strong> is allowed here.
+                field: {label: Paragraph, name: paragraph, widget: text}
+              - label: Pillars
+                name: pillars
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - {label: Icon, name: icon, widget: select, options: [eye, camera, globe]}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Text, name: text, widget: text}
+              - label: Statistics
+                name: stats
+                widget: list
+                collapsed: true
+                summary: '{{fields.label}}'
+                fields:
+                  - {label: Number, name: target, widget: number, value_type: int}
+                  - {label: Label, name: label, widget: string}
+
+          # --------------------------------------------------------- filmmaker
+          - label: The Filmmaker
+            name: filmmaker
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Section eyebrow, name: label, widget: string}
+              - {label: Section heading, name: heading, widget: string}
+              - {label: Name, name: name, widget: string}
+              - {label: Role line, name: role, widget: string}
+              - {label: Portrait, name: portrait, widget: image}
+              - {label: Portrait alt text, name: portraitAlt, widget: string}
+              - label: Biography
+                name: bio
+                widget: list
+                hint: One entry per paragraph. Basic HTML such as <strong> is allowed.
+                field: {label: Paragraph, name: paragraph, widget: text}
+              - label: Role tags
+                name: roleTags
+                widget: list
+                field: {label: Tag, name: tag, widget: string}
+              - {label: Button label, name: ctaLabel, widget: string}
+              - {label: Button URL, name: ctaUrl, widget: string}
+
+          # ----------------------------------------------------------- contact
+          - label: Contact
+            name: contact
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Section eyebrow, name: label, widget: string}
+              - {label: Section heading, name: heading, widget: string}
+              - label: Details
+                name: details
+                widget: list
+                summary: '{{fields.label}}'
+                fields:
+                  - {label: Label, name: label, widget: string}
+                  - {label: Value, name: value, widget: string}
+              - {label: Socials heading, name: socialsLabel, widget: string}
+              - label: Social links
+                name: socials
+                widget: list
+                summary: '{{fields.name}}'
+                hint: Name must be "Vimeo" or "IMDb" for the icon to appear.
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: URL, name: url, widget: string}
+              - {label: Form endpoint, name: formAction, widget: string}
+              - {label: Email subject line, name: formSubject, widget: string}
+
+          # ------------------------------------------------------------ footer
+          - label: Footer
+            name: footer
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Logo text, name: logoText, widget: string}
+              - {label: Copyright line, name: copyright, widget: string}
+              - label: Links
+                name: links
+                widget: list
+                summary: '{{fields.label}}'
+                fields:
+                  - {label: Label, name: label, widget: string}
+                  - {label: URL, name: url, widget: string}
+
+          # --------------------------------------------------------------- seo
+          - label: SEO and site details
+            name: site
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Site name, name: title, widget: string}
+              - {label: Meta description, name: description, widget: text}
+              - {label: Site URL, name: url, widget: string}
+              - {label: Share title, name: ogTitle, widget: string}
+              - {label: Share description, name: ogDescription, widget: text}
+              - {label: Share image, name: ogImage, widget: image}
+              - {label: Analytics endpoint, name: analytics, widget: string}
+
+          # -------------------------------------------------- rarely changed
+          - label: Navigation
+            name: nav
+            widget: list
+            collapsed: true
+            summary: '{{fields.label}}'
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: Link, name: href, widget: string}
+              - {label: Highlighted by default, name: active, widget: boolean, required: false, default: false}
+
+          - label: Extra pages
+            name: pages
+            widget: list
+            collapsed: true
+            summary: '{{fields.title}}'
+            hint: Markdown pages such as the privacy policy. Edit the .md file itself on GitHub.
+            fields:
+              - {label: URL slug, name: slug, widget: string}
+              - {label: Markdown file, name: source, widget: string}
+              - {label: Page title, name: title, widget: string}
+              - {label: Meta description, name: description, widget: text}

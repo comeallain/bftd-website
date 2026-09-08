@@ -1,5 +1,4 @@
 {
-  "_comment": "Single source of truth for the BFTD website. Edit this file, then run: python3 build.py",
   "site": {
     "title": "Back From The Dead Productions",
     "description": "Back From The Dead Productions is a creatively driven production company crafting groundbreaking movies and documentaries based on true stories. Founded by filmmaker Richie Smyth in Los Angeles.",

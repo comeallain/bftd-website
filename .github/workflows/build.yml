@@ -11,6 +11,7 @@ on:
       - project.html
       - page.html
       - build.py
+      - admin/config.yml
       - '*.md'
   workflow_dispatch:
 
@@ -22,6 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Check the CMS config declares every content field
+        run: python3 tools/check_cms_config.py
 
       - name: Build index.html from content.json
         run: python3 build.py
