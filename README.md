@@ -34,6 +34,8 @@ So editing `content.json` directly on github.com is enough to publish.
 | `projects/<id>/` | **Generated** detail page per project. Do not edit. |
 | `images/` | Site images. |
 | `404.html` | Not-found page. |
+| `fonts/` | Self-hosted webfonts. `fonts.css` is **generated**. |
+| `tools/` | `fetch-fonts.sh` re-downloads the fonts. Rarely needed. |
 | `robots.txt`, `sitemap.xml` | **Generated** by `build.py`. |
 
 ## Adding a project
@@ -76,3 +78,23 @@ images load. To resize on macOS:
 ```bash
 sips -Z 1200 -s format jpeg -s formatOptions 78 big.png --out images/small.jpg
 ```
+
+## Fonts
+
+The typefaces are served from our own domain, not Google's CDN. That is
+deliberate: loading fonts from Google transmits every visitor's IP address to
+Google before they interact with anything, which is not a good position for a
+company operating out of Dublin.
+
+You should not need to touch this. If the set of typefaces ever changes, edit
+the URL in `tools/fetch-fonts.sh` and run it:
+
+```bash
+bash tools/fetch-fonts.sh
+```
+
+It downloads the Latin subsets and regenerates `fonts/fonts.css`. Note that
+DM Sans and Playfair Display are variable fonts — one file serves a range of
+weights — which the generator handles. Declaring each weight separately would
+reference files that do not exist and silently drop every bold weight back to
+a system font.
