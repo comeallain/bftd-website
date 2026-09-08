@@ -7,6 +7,45 @@ and rollback.
 It will not work until the steps below are done. They are done once, take
 about fifteen minutes, and need no command line.
 
+## Quickest route: sign in with a token
+
+You do **not** have to deploy anything. Sveltia offers a **Sign In with Token**
+button on the login screen, which needs no backend and no configuration. Use
+this to get working today; the OAuth setup below is an improvement you can make
+later, and is mainly worth it when someone other than you needs access.
+
+1. Go to **https://github.com/settings/personal-access-tokens/new**
+   (Settings → Developer settings → Personal access tokens → **Fine-grained**)
+2. Set:
+   - **Token name**: `BFTD Content Manager`
+   - **Expiration**: 90 days
+   - **Resource owner**: `comeallain`
+   - **Repository access**: *Only select repositories* → `comeallain/bftd-website`
+   - **Permissions** → Repository permissions → **Contents: Read and write**
+     (Metadata: Read-only is added automatically and is required)
+3. **Generate token** and copy it.
+4. Go to **https://bftdfilms.com/admin**, click **Sign In with Token**, paste it.
+
+The token stays in your browser. It is not committed anywhere.
+
+> This is deliberately narrower than the credential that was used by the old
+> "BFTD Content Manager": fine-grained, limited to this one repository, able to
+> change file contents and nothing else, and it expires. If it ever leaks, the
+> blast radius is this repo's files for 90 days rather than your whole account
+> indefinitely.
+>
+> If a fine-grained token is rejected, a classic token with the `repo` scope
+> will work, but prefer fine-grained.
+
+### Why bother with OAuth later
+
+Token sign-in means handing a person a credential. For your assistant that is
+the thing we are trying to avoid — with OAuth they sign in with their own
+GitHub account and you revoke access by removing them as a collaborator. So:
+token now, OAuth when a second person needs in.
+
+---
+
 ## Why there is a setup step at all
 
 GitHub will not let a purely static page log you in. Completing an OAuth login
