@@ -8,11 +8,11 @@ rather than to cover every practice a website might have.
 
 ## Who we are
 
-This website is operated by **[LEGAL ENTITY NAME]**, trading as Back From The
+This website is operated by **BFTD Productions Limited**, trading as Back From The
 Dead Productions, a film and documentary production company working between
 Los Angeles and Dublin.
 
-Registered address: **[REGISTERED ADDRESS]**
+Registered address: **72 Francis Street, Dublin 8, Ireland**
 
 For anything in this policy, contact us at **contact@bftdfilms.com**.
 
@@ -108,23 +108,32 @@ We use the following service providers, who process information on our behalf:
 | Provider | What they do | Where |
 |---|---|---|
 | GitHub Pages | Hosts the website | United States |
-| GoatCounter | Aggregate visitor statistics | **[CONFIRM]** |
+| GoatCounter | Aggregate visitor statistics | Ireland; servers in Finland and Germany |
 | Formspree | Processes contact form submissions | United States |
 | Google Workspace | Our email | United States |
 
 We may also disclose information where we are required to do so by law, or
 where it is necessary to establish or defend legal claims.
 
-Because some of these providers are outside the European Economic Area, your
-information may be transferred to the United States. Such transfers rely on
-the safeguards those providers have in place, including standard contractual
-clauses where applicable.
+Our analytics provider is established in Ireland and stores its data on
+servers in Finland and Germany, so **analytics information does not leave the
+European Economic Area**.
+
+Our host, our form processor and our email provider are established in the
+United States, so information handled by them — which for the contact form
+means your name, email address and message — may be transferred there. Those
+transfers rely on the safeguards each provider has in place, including
+standard contractual clauses where applicable.
 
 ## How long we keep it
 
-We keep enquiry correspondence for as long as needed to deal with it and for a
-reasonable period afterwards in case you get back in touch — ordinarily no
-more than **[RETENTION PERIOD, e.g. two years]** — after which it is deleted.
+We keep enquiry correspondence for as long as needed to deal with it, and for
+up to **two years from our last exchange with you** in case you get back in
+touch about the same matter. After that it is deleted.
+
+If your enquiry leads to us working together, correspondence relating to that
+work is kept for as long as the relationship lasts and for six years
+afterwards, which is the period we may need it for tax and legal purposes.
 
 Analytics figures are aggregate and contain nothing that identifies you, so
 they are kept indefinitely.
@@ -156,6 +165,6 @@ at the top. Material changes will be noted here.
 
 ## Contact
 
-**[LEGAL ENTITY NAME]**
-**[REGISTERED ADDRESS]**
+**BFTD Productions Limited**
+**72 Francis Street, Dublin 8, Ireland**
 contact@bftdfilms.com
