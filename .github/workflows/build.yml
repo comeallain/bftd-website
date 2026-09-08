@@ -1,0 +1,36 @@
+name: Build site
+
+# content.json is the source of truth. When it changes, regenerate index.html
+# so the published site matches without anyone needing to run the build locally.
+on:
+  push:
+    branches: [main]
+    paths:
+      - content.json
+      - template.html
+      - build.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build index.html from content.json
+        run: python3 build.py
+
+      - name: Commit regenerated files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html robots.txt sitemap.xml
+          if git diff --staged --quiet; then
+            echo "Nothing to regenerate."
+          else
+            git commit -m "Rebuild site from content.json"
+            git push
+          fi
