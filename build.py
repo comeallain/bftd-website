@@ -516,7 +516,9 @@ def write_extras(c, pages):
     s = c['site']
     base = s['url'].rstrip('/')
     with open(os.path.join(ROOT, 'robots.txt'), 'w') as f:
-        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n")
+        f.write("User-agent: *\nAllow: /\n"
+                "Disallow: /admin/\n"
+                f"\nSitemap: {base}/sitemap.xml\n")
     urls = ''.join(
         f'  <url>\n    <loc>{base}/{p}</loc>\n'
         f'    <changefreq>monthly</changefreq>\n'
