@@ -1,26 +1,9 @@
-<!-- GENERATED FILE — do not edit.
-     Edit content.json, then run: python3 build.py -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Back From The Dead Productions</title>
-<meta name="description" content="Back From The Dead Productions is a creatively driven production company crafting groundbreaking movies and documentaries based on true stories. Founded by filmmaker Richie Smyth in Los Angeles.">
-<link rel="canonical" href="https://bftdfilms.com/">
-<meta property="og:title" content="Back From The Dead Productions">
-<meta property="og:description" content="Visualising Truth, Passion and Imagination. A Richie Smyth Production Company.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://bftdfilms.com/">
-<meta property="og:image" content="https://bftdfilms.com/images/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Back From The Dead Productions">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Back From The Dead Productions">
-<meta name="twitter:description" content="Visualising Truth, Passion and Imagination. A Richie Smyth Production Company.">
-<meta name="twitter:image" content="https://bftdfilms.com/images/og-cover.jpg">
-<meta name="theme-color" content="#080808">
+{{HEAD_META}}
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23080808'/%3E%3Cpath d='M181,194.5L21.5,194 47,167.5 60,158.5 64,152.5 70,150.5 76,140.5 84.5,137 86.5,113 92.5,83 92.5,70 87.5,64 82.5,50 76.5,45 75.5,36 77.5,36 78.5,41 82,44.5 84.5,44 79.5,33 80.5,23 83,21.5 84.5,23 83.5,32 89,38.5 91.5,37 87.5,22 87.5,13 90,7.5 93.5,9 93.5,25 96.5,33 99,35.5 101.5,30 102.5,16 104.5,12 108,9.5 109.5,12 106.5,23 106.5,35 110.5,44 116,48.5 120,48.5 126,40.5 131,40.5 133.5,43 125.5,49 119.5,63 113.5,68 112.5,71 114.5,113 117.5,135 124,140.5 129,140.5 132.5,144 134.5,149 141.5,153 143.5,160 170,182.5 181,194.5Z' fill='%23c41e1e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -371,24 +354,11 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   <a href="#" class="nav__logo"><svg class="hand-icon" aria-hidden="true"><use xlink:href="#bftd-hand" href="#bftd-hand"></use></svg>Back From <span>The Dead</span></a>
   <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   <ul class="nav__links" id="navLinks">
-    <li><a href="#" class="nav__link active">Home</a></li>
-    <li><a href="#projects" class="nav__link">Projects</a></li>
-    <li><a href="#reel" class="nav__link">Reel</a></li>
-    <li><a href="#about" class="nav__link">About</a></li>
-    <li><a href="#contact" class="nav__link">Contact</a></li>
+{{NAV_LINKS}}
   </ul>
 </nav>
 
-<section class="hero">
-  <div class="hero__bg"><img src="/images/hero.jpg" alt="Back From The Dead Productions" width="1600" height="776" loading="eager" fetchpriority="high"></div>
-  <div class="hero__ov"></div><div class="hero__vig"></div>
-  <div class="hero__c">
-    <div class="hero__mark"><svg class="hand-icon" aria-hidden="true"><use xlink:href="#bftd-hand" href="#bftd-hand"></use></svg></div>
-    <h1 class="hero__t">Back From<br>The Dead<em>Productions</em></h1>
-    <p class="hero__tag">Visualising truth, passion and imagination.</p>
-  </div>
-  <div class="hero__sc"><span>Scroll</span><div class="hero__scl"></div></div>
-</section>
+{{HERO}}
 
 <!-- ========================================
      PROJECT CAROUSEL
@@ -397,8 +367,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   <div class="con">
     <div class="carousel-header rv">
       <div class="sec__h" style="margin-bottom:0">
-        <p class="sec__l">Featured Work</p>
-        <h2 class="sec__t">Productions</h2>
+        <p class="sec__l">{{PROJECTS_LABEL}}</p>
+        <h2 class="sec__t">{{PROJECTS_HEADING}}</h2>
       </div>
       <div class="carousel-nav">
         <span class="carousel-counter" id="carCounter">1 / 4</span>
@@ -413,7 +383,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   </div>
   <div class="carousel-wrap rv rv1">
     <div class="con">
-      <div class="carousel-track" id="carTrack"><div class="pc" data-idx="0"><div class="pc__img"><img src="/images/Zarqawi.jpg" alt="Zarqawi" width="1200" height="671" loading="lazy"><div class="pc__ov"></div><span class="pc__st">In Development</span><span class="pc__num">01</span></div><div class="pc__b"><p class="pc__g">Feature Film</p><h3 class="pc__tt">Zarqawi</h3><p class="pc__ll">A CIA agent must go rogue in an attempt to stop the world&#x27;s greatest new terrorist since Bin Laden.</p><button class="pc__cta" data-project="0">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div><div class="pc" data-idx="1"><div class="pc__img"><img src="/images/Fight-Charity.jpg" alt="Fighting Charity" width="1200" height="546" loading="lazy"><div class="pc__ov"></div><span class="pc__st">In Development</span><span class="pc__num">02</span></div><div class="pc__b"><p class="pc__g">Feature Film</p><h3 class="pc__tt">Fighting Charity</h3><p class="pc__ll">After a young girl is abandoned by her family, she returns 20 years later to confront them, but in turn ignites a blood-feud.</p><button class="pc__cta" data-project="1">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div><div class="pc" data-idx="2"><div class="pc__img"><img src="/images/The-Dechert-Incident.jpg" alt="The Dechert Incident" width="901" height="427" loading="lazy"><div class="pc__ov"></div><span class="pc__st">In Development</span><span class="pc__num">03</span></div><div class="pc__b"><p class="pc__g">Documentary</p><h3 class="pc__tt">The Dechert Incident</h3><p class="pc__ll">A geo-political thriller following two men targeted by a powerful law firm for exposing an international financial crime syndicate originating in Iran.</p><button class="pc__cta" data-project="2">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div><div class="pc" data-idx="3"><div class="pc__img"><img src="/images/NUH.jpg" alt="New Universal Human" width="1200" height="486" loading="lazy"><div class="pc__ov"></div><span class="pc__st">In Development</span><span class="pc__num">04</span></div><div class="pc__b"><p class="pc__g">Series</p><h3 class="pc__tt">New Universal Human</h3><p class="pc__ll">Enter the multiverse, a world of stories set in the fantastic imagination of Tohl Narita.</p><button class="pc__cta" data-project="3">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div><div class="pc" data-idx="4"><div class="pc__img"><img src="/images/Jadotville-Jacks.jpg" alt="Jadotville Jacks" width="1200" height="543" loading="lazy"><div class="pc__ov"></div><span class="pc__st">In Development</span><span class="pc__num">05</span></div><div class="pc__b"><p class="pc__g">Documentary</p><h3 class="pc__tt">Jadotville Jacks</h3><p class="pc__ll">The true story of Ireland’s UN soldiers at Jadotville, how they survived a five day siege in 1961, and why the fight for recognition lasted a lifetime.</p><button class="pc__cta" data-project="4">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div><div class="pc" data-idx="5"><div class="pc__img"><img src="/images/Ramree-Island.jpg" alt="Ramree Island" width="622" height="180" loading="lazy"><div class="pc__ov"></div><span class="pc__st">In Development</span><span class="pc__num">06</span></div><div class="pc__b"><p class="pc__g">Feature Film</p><h3 class="pc__tt">Ramree Island</h3><p class="pc__ll">A platoon of Japanese soldiers attempt to ambush an Allied invasion by crossing an island infested with sea crocodiles.</p><button class="pc__cta" data-project="5">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div></div>
+      <div class="carousel-track" id="carTrack">{{PROJECT_CARDS}}</div>
       <div class="carousel-dots" id="carDots"></div>
     </div>
   </div>
@@ -434,12 +404,12 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 <section class="sec reel" id="reel">
   <div class="con">
     <div class="sec__h rv">
-      <p class="sec__l">Director&#x27;s Reel</p>
-      <h2 class="sec__t">The Work of Richie Smyth</h2>
+      <p class="sec__l">{{REEL_LABEL}}</p>
+      <h2 class="sec__t">{{REEL_HEADING}}</h2>
     </div>
     <div class="reel__player rv" id="reelPlayer">
       <iframe id="reelIframe" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Director's Reel"></iframe>
-      <div class="reel__player-poster" id="reelPoster" style="background-image:url('/images/reel-poster.png')">
+      <div class="reel__player-poster" id="reelPoster" style="background-image:url('{{REEL_POSTER}}')">
         <button class="reel__play" id="reelPlayBtn" aria-label="Play reel">
           <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
         </button>
@@ -448,20 +418,16 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
     <div class="reel__now rv rv1" id="reelNow">
       <div>
         <p class="reel__now-label">Now Playing</p>
-        <p class="reel__now-title" id="reelNowTitle">Director&#x27;s Showreel</p>
+        <p class="reel__now-title" id="reelNowTitle">{{REEL_NOW_TITLE}}</p>
       </div>
-      <p class="reel__now-meta" id="reelNowMeta">Richie Smyth · Showreel</p>
+      <p class="reel__now-meta" id="reelNowMeta">{{REEL_NOW_META}}</p>
     </div>
     <div class="reel__tabs rv rv2" id="reelTabs">
-      <button class="reel__tab active" data-cat="all">All</button>
-      <button class="reel__tab" data-cat="film">Feature Films</button>
-      <button class="reel__tab" data-cat="music">Music Videos</button>
-      <button class="reel__tab" data-cat="commercial">Commercials</button>
-      <button class="reel__tab" data-cat="other">Other</button>
+{{REEL_TABS}}
     </div>
-    <div class="reel__grid rv rv3" id="reelGrid"><div class="reel__item active" data-idx="0"><img src="/images/thumbjadot.jpg" alt="The Siege of Jadotville" width="640" height="480" loading="lazy"><span class="reel__item-dur">1:47</span><div class="reel__item-ov"><p class="reel__item-cat">Feature Film</p><p class="reel__item-t">The Siege of Jadotville</p><p class="reel__item-sub">Netflix · Jamie Dornan · 2016</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="1"><img src="/images/thumbthefl.jpg" alt="U2 — The Fly" width="640" height="480" loading="lazy"><span class="reel__item-dur">4:53</span><div class="reel__item-ov"><p class="reel__item-cat">Music Video</p><p class="reel__item-t">U2 — The Fly</p><p class="reel__item-sub">Achtung Baby · 1991</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="2"><img src="/images/thumbtackl.jpg" alt="Three Ireland &#x27;Tackle Homelessness&#x27;" width="640" height="480" loading="lazy"><span class="reel__item-dur">3:20</span><div class="reel__item-ov"><p class="reel__item-cat">Commercial</p><p class="reel__item-t">Three Ireland &#x27;Tackle Homelessness&#x27;</p><p class="reel__item-sub">Richie Smyth</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="3"><img src="/images/thumbslide.jpg" alt="The Verve — Slide Away" width="640" height="480" loading="lazy"><div class="reel__item-ov"><p class="reel__item-cat">Music Video</p><p class="reel__item-t">The Verve — Slide Away</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="4"><img src="/images/thumblastn.jpg" alt="U2 — Last Night On Earth" width="640" height="480" loading="lazy"><div class="reel__item-ov"><p class="reel__item-cat">Music Video</p><p class="reel__item-t">U2 — Last Night On Earth</p><p class="reel__item-sub">Pop · 1997</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="5"><img src="/images/thumbsuper.jpg" alt="The Verve — Superstar" width="640" height="480" loading="lazy"><div class="reel__item-ov"><p class="reel__item-cat">Music Video</p><p class="reel__item-t">The Verve — Superstar</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="6"><img src="/images/aibsurfer.jpg" alt="AIB — The Surfer" width="640" height="323" loading="lazy"><div class="reel__item-ov"><p class="reel__item-cat">Commercial</p><p class="reel__item-t">AIB — The Surfer</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="7"><img src="/images/thumbeircom.jpg" alt="Eircom — Sleeveface" width="640" height="480" loading="lazy"><div class="reel__item-ov"><p class="reel__item-cat">Commercial</p><p class="reel__item-t">Eircom — Sleeveface</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div><div class="reel__item" data-idx="8"><img src="/images/thumbu2hkm.jpg" alt="U2 Pop — Hong Kong Mixes" width="640" height="388" loading="lazy"><div class="reel__item-ov"><p class="reel__item-cat">Music Video</p><p class="reel__item-t">U2 Pop — Hong Kong Mixes</p></div><div class="reel__item-play"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div></div></div>
+    <div class="reel__grid rv rv3" id="reelGrid">{{REEL_ITEMS}}</div>
     <div class="reel__cta rv">
-      <a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="btn">View Full Reel on Vimeo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      <a href="{{REEL_VIMEO}}" target="_blank" rel="noopener" class="btn">View Full Reel on Vimeo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
     </div>
   </div>
 </section>
@@ -470,57 +436,25 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 <!-- ABOUT US -->
 <section class="sec about-us" id="about">
   <div class="con">
-    <div class="sec__h rv"><p class="sec__l">About Us</p><h2 class="sec__t">The Company</h2></div>
-    <div class="manifesto rv">
-      <p class="manifesto__quote">Every great story deserves to be told. We find the ones that have been buried, forgotten, or silenced and bring them back from the dead.</p>
-      <p class="manifesto__attr">Back From The Dead Productions</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-collage rv">
-        <div class="about-collage__main"><img src="/images/richiegun.jpg" alt="Richie Smyth on location" width="1200" height="869" loading="lazy"></div>
-        <div class="about-collage__float"><img src="/images/richiejamie.jpg" alt="Richie Smyth directing Jamie Dornan" width="555" height="257" loading="lazy"></div>
-        <div class="about-collage__accent"></div>
-      </div>
-      <div class="about-story rv rv1">
-        <h3>Reviving Cinema from Los Angeles to Dublin</h3>
-        <p><strong>Back From The Dead Productions</strong> is a creatively driven, global production company based in Los Angeles and Dublin. We specialise in crafting groundbreaking movies and documentaries rooted in real events, stories that matter, stories that challenge, stories the world needs to hear.</p>
-        <p>Founded by Filmmaker <strong>Richie Smyth</strong> and Producer <strong>Kevin O'Meallain</strong>, Back From The Dead Productions was born from a singular conviction: the most powerful stories are the ones that actually happened. From the front lines of geopolitical conflict to the corridors of corporate power, we go where the truth takes us.</p>
-        <p>Our approach is simple: pair fearless investigative storytelling with world-class cinematic craft. No compromises on substance. No compromises on style.</p>
-      </div>
-    </div>
-    <div class="pillars"><div class="pillar rv"><div class="pillar__icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4 class="pillar__title">Truth First</h4><p class="pillar__text">Every project begins with rigorous research and real-world immersion. We don&#x27;t invent stories — we uncover them.</p></div><div class="pillar rv rv1"><div class="pillar__icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h4 class="pillar__title">Cinematic Craft</h4><p class="pillar__text">True stories deserve blockbuster production value. We bring Hollywood craft to stories that Hollywood overlooks.</p></div><div class="pillar rv rv2"><div class="pillar__icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h4 class="pillar__title">Global Reach</h4><p class="pillar__text">Our stories cross borders. From the Middle East to the halls of international finance, we produce content that resonates worldwide.</p></div></div>
-    <div class="stats-bar rv" style="grid-template-columns:repeat(2,1fr)"><div class="stat"><p class="stat__num" data-target="15">0</p><p class="stat__label">Years Experience</p></div><div class="stat"><p class="stat__num" data-target="1">0</p><p class="stat__label">Mission: Tell The Truth</p></div></div>
-    <div class="sec__h rv"><p class="sec__l">The Filmmaker</p><h2 class="sec__t">Richie Smyth</h2></div>
-    <div class="team-spot rv">
-      <div class="team-spot__portrait"><img src="/images/Richie.jpg" alt="Portrait of Richie Smyth" width="1000" height="2098" loading="lazy"></div>
-      <div class="team-spot__info">
-        <h3>Richie Smyth</h3>
-        <p class="team-spot__role">Founder · Director · Writer · Producer</p>
-        <p class="team-spot__bio">Richie Smyth is an internationally acclaimed, award-winning filmmaker and the creative force behind Back From The Dead Productions. He is best known for directing <strong>The Siege of Jadotville</strong>, a geo-political war thriller starring Jamie Dornan, Mark Strong, and Guillaume Canet, which became one of Netflix's first original feature films and won three Irish Film &amp; Television Awards, including <strong>Best Director</strong>.</p>
-        <p class="team-spot__bio">Richie's career spans two decades of work across feature films, music videos for <strong>U2, The Verve, Bon Jovi,</strong> and <strong>Melissa Etheridge</strong>, and globally recognised brand campaigns for <strong>Nike, Guinness, Pepsi,</strong> and <strong>PETA</strong>. His work is recognised for its edgy photographic style, its beauty and humanity. Based between Los Angeles and Dublin, Richie is currently developing <strong>Fighting Charity</strong> and <strong>The Dechert Incident</strong>, proving that truth is always stranger than fiction.</p>
-        <div class="team-spot__roles"><span class="role-tag">Director</span><span class="role-tag">Writer</span><span class="role-tag">Producer</span><span class="role-tag">Photographer</span></div>
-        <a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="btn">View on Vimeo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-      </div>
-    </div>
+    <div class="sec__h rv"><p class="sec__l">{{ABOUT_LABEL}}</p><h2 class="sec__t">{{ABOUT_HEADING}}</h2></div>
+    {{ABOUT}}
+    {{PILLARS}}
+    {{STATS}}
+    {{FILMMAKER}}
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="sec contact" id="contact">
   <div class="con">
-    <div class="sec__h rv"><p class="sec__l">Get In Touch</p><h2 class="sec__t">Contact</h2></div>
+    <div class="sec__h rv"><p class="sec__l">{{CONTACT_LABEL}}</p><h2 class="sec__t">{{CONTACT_HEADING}}</h2></div>
     <div class="contact__grid">
-      <div class="contact__info rv">
-        <div class="contact__detail"><p class="contact__dl">Location</p><p class="contact__dv">Los Angeles USA · Dublin Ireland</p></div>
-        <div class="contact__detail"><p class="contact__dl">Follow</p>
-          <div class="contact__socials"><a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="contact__sl" aria-label="Vimeo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.42c-.09 2.1-1.56 4.97-4.39 8.62C14.7 19.69 12.34 21.5 10.37 21.5c-1.22 0-2.25-1.13-3.09-3.38-.56-2.06-1.12-4.12-1.69-6.18-.62-2.25-1.29-3.38-2-3.38-.16 0-.7.33-1.63.98L1 8.32c1.03-.9 2.04-1.81 3.04-2.72C5.47 4.36 6.6 3.69 7.39 3.62c1.42-.14 2.29.84 2.61 2.92.35 2.25.59 3.65.72 4.18.4 1.81.84 2.72 1.31 2.72.37 0 .93-.59 1.67-1.76.75-1.17 1.14-2.07 1.2-2.69.1-1.03-.3-1.55-1.2-1.55-.43 0-.87.1-1.33.29.88-2.89 2.56-4.3 5.05-4.21 1.84.05 2.71 1.25 2.58 3.6z"/></svg></a><a href="https://www.imdb.com/name/nm1100217/" target="_blank" rel="noopener" class="contact__sl" aria-label="IMDb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 3h3v18H2V3zm5 0h3.5l1.5 9 1.5-9H17v18h-2.5V9L13 18h-2L9.5 9v12H7V3zm13 0h2v18h-2V3z"/></svg></a></div>
-        </div>
-      </div>
-      <form class="form rv rv1" action="https://formspree.io/f/mojkaalv" method="POST">
+      {{CONTACT_INFO}}
+      <form class="form rv rv1" action="{{FORM_ACTION}}" method="POST">
         <div><label class="form__l" for="name">Name</label><input class="form__i" type="text" name="name" id="name" placeholder="Your name" required></div>
         <div><label class="form__l" for="email">Email</label><input class="form__i" type="email" name="email" id="email" placeholder="your@email.com" required></div>
         <div><label class="form__l" for="msg">Message</label><textarea class="form__ta" name="message" id="msg" placeholder="Tell us about your project..." required></textarea></div>
-        <input type="hidden" name="_subject" value="New enquiry from BFTD website">
+        <input type="hidden" name="_subject" value="{{FORM_SUBJECT}}">
         <div class="form__s"><button type="submit" class="btn">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
       </form>
     </div>
@@ -528,13 +462,9 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 </section>
 
 <!-- FOOTER -->
-<footer class="ft"><div class="con"><div class="ft__in">
-  <a href="#" class="ft__logo"><svg class="hand-icon" aria-hidden="true"><use xlink:href="#bftd-hand" href="#bftd-hand"></use></svg>Back From The Dead Productions</a>
-  <p class="ft__c">© 2026 Back From The Dead Productions. All rights reserved.</p>
-  <ul class="ft__ls"><li><a href="https://vimeo.com/user11478169" target="_blank" rel="noopener" class="ft__l">Vimeo</a></li><li><a href="https://www.imdb.com/name/nm1100217/" target="_blank" rel="noopener" class="ft__l">IMDb</a></li></ul>
-</div></div></footer>
+{{FOOTER}}
 
-<script type="application/json" id="site-data">{"projects":[{"id":"zarqawi","title":"Zarqawi","type":"Feature Film","status":"In Development","img":"/images/Zarqawi.jpg","logline":"A CIA agent must go rogue in an attempt to stop the world's greatest new terrorist since Bin Laden.","synopsis":["In the chaotic aftermath of the Iraq invasion, a seasoned CIA operative finds himself sidelined by bureaucracy while Abu Musab al-Zarqawi builds a network of terror across the Middle East. When official channels fail, our protagonist makes a fateful decision: go rogue.","Based on extensively researched true events, Zarqawi is a taut, morally complex thriller that explores the human cost of the War on Terror."]},{"id":"fighting-charity","title":"Fighting Charity","type":"Feature Film","status":"In Development","img":"/images/Fight-Charity.jpg","logline":"After a young girl is abandoned by her family, she returns 20 years later to confront them, but in turn ignites a blood-feud.","synopsis":["Charity Sheridan is a scrappy nine-year old girl from a family of Irish travellers who dreams of becoming a professional boxer. In her eyes, life is perfect, she worships her bare-knuckle champion dad, her tight-knit family, and her roam-free life. When she accidentally kills a boy from a rival family, a vicious inter-family feud is ignited, and her own family has no option but to send her away until tensions subside. When her family never returns, she grows up in foster care, emotionally broken and angry at a world that discarded her."]},{"id":"the-dechert-incident","title":"The Dechert Incident","type":"Documentary","status":"In Development","img":"/images/The-Dechert-Incident.jpg","logline":"A geo-political thriller following two men targeted by a powerful law firm for exposing an international financial crime syndicate originating in Iran.","synopsis":["When two whistleblowers stumble upon evidence of an international financial crime syndicate stretching from Tehran to London and Dubai, they believe the truth will set them free. Instead, it makes them targets.","The Dechert Incident is a multi-part documentary series featuring exclusive access to the whistleblowers and the mounting evidence of a cover-up that reaches the highest levels of international power."]},{"id":"new-universal-human","title":"New Universal Human","type":"Series","status":"In Development","img":"/images/NUH.jpg","logline":"Enter the multiverse, a world of stories set in the fantastic imagination of Tohl Narita.","synopsis":["Watch the rise to power of the URIN in the cities above the chemical cloud. While below on a scorched Earth the last of the hydrosphere forces humans out into the ocean deserts seeking water. Urin Ring, the oldest son of Urin Mother cast down to Earth, is building an army, one that will soon rise and take back his rightful throne."]},{"id":"jadotville-jacks","title":"Jadotville Jacks","type":"Documentary","status":"In Development","img":"/images/Jadotville-Jacks.jpg","logline":"The true story of Ireland’s UN soldiers at Jadotville, how they survived a five day siege in 1961, and why the fight for recognition lasted a lifetime.","synopsis":["In September 1961, 150 Irish UN troops, some as young as 18, were surrounded and besieged for five days in the Congolese mining town of Jadotville. Outnumbered and outgunned, A Company fought with extraordinary discipline, inflicting heavy losses while sustaining no fatalities. Yet when the battle ended, they were ordered to surrender, and returned home to silence, stigma, and decades of official neglect."]},{"id":"ramree-island","title":"Ramree Island","type":"Feature Film","status":"In Development","img":"/images/Ramree-Island.jpg","logline":"A platoon of Japanese soldiers attempt to ambush an Allied invasion by crossing an island infested with sea crocodiles.","synopsis":["In the waning days of World War II, young Imperial Army private Ryusei Tanaka joins legendary commander General Hiroshi Yamada on a mission to reinforce Japanese forces on Ramree Island, where Allied troops press hard for control. Shot down en route, the unit flees into the island’s mangrove swamps to avoid capture, only to discover a far deadlier enemy lurking in the shadows. As torrential monsoons batter the land, unseen predators begin picking the soldiers off one by one. When massive saltwater crocodiles strike, Ryu proves his mettle by killing one, but the attacks escalate until the survivors are forced into a desperate escape through the jungle canopy. A monstrous six-meter “Behemoth” crocodile ends Yamada’s life and drags Ryu into its underwater lair, where he faces the rotting corpses of his comrades and the ultimate test of survival. Navigating a flooded labyrinth and fending off relentless predators, Ryu battles exhaustion, terror, and loss to reach the open beach, only to be ambushed one last time by the Behemoth. Salvation comes in the form of Allied gunfire, as the fearsome creature falls to British bullets, leaving Ryu alive, but forever marked by his ordeal on Ramree Island."]}],"reel":[{"platform":"youtube","videoId":"9_JHsiQTTmg","title":"The Siege of Jadotville","sub":"Netflix · Jamie Dornan · 2016","cat":"film","thumb":"/images/thumbjadot.jpg","dur":"1:47"},{"platform":"youtube","videoId":"5HDPenYIPtg","title":"U2 — The Fly","sub":"Achtung Baby · 1991","cat":"music","thumb":"/images/thumbthefl.jpg","dur":"4:53"},{"platform":"youtube","videoId":"UzMOO8wpSis","title":"Three Ireland 'Tackle Homelessness'","sub":"Richie Smyth","cat":"commercial","thumb":"/images/thumbtackl.jpg","dur":"3:20"},{"platform":"youtube","videoId":"X45hWP_QKt0","title":"The Verve — Slide Away","sub":"","cat":"music","thumb":"/images/thumbslide.jpg","dur":""},{"platform":"youtube","videoId":"DAYZ29QklTg","title":"U2 — Last Night On Earth","sub":"Pop · 1997","cat":"music","thumb":"/images/thumblastn.jpg","dur":""},{"platform":"youtube","videoId":"1xIGyp9efXU","title":"The Verve — Superstar","sub":"","cat":"music","thumb":"/images/thumbsuper.jpg","dur":""},{"platform":"youtube","videoId":"kUjXtpQ0vqY","title":"AIB — The Surfer","sub":"","cat":"commercial","thumb":"/images/aibsurfer.jpg","dur":""},{"platform":"youtube","videoId":"vc-QpG7HhgI","title":"Eircom — Sleeveface","sub":"","cat":"commercial","thumb":"/images/thumbeircom.jpg","dur":""},{"platform":"vimeo","videoId":"106698635","title":"U2 Pop — Hong Kong Mixes","sub":"","cat":"music","thumb":"/images/thumbu2hkm.jpg","dur":""}]}</script>
+<script type="application/json" id="site-data">{{SITE_DATA}}</script>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
 
@@ -755,6 +685,6 @@ buildReelGrid();
 
 }); // end DOMContentLoaded
 </script>
-<script data-goatcounter="https://bftdfilms.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="{{ANALYTICS}}" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
