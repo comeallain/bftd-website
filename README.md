@@ -34,6 +34,8 @@ So editing `content.json` directly on github.com is enough to publish.
 | `projects/<id>/` | **Generated** detail page per project. Do not edit. |
 | `images/` | Site images. |
 | `404.html` | Not-found page. |
+| `privacy.md` | Privacy policy text. **Edit this**, not the generated page. |
+| `page.html` | Shell for long-form content pages. |
 | `fonts/` | Self-hosted webfonts. `fonts.css` is **generated**. |
 | `tools/` | `fetch-fonts.sh` re-downloads the fonts. Rarely needed. |
 | `robots.txt`, `sitemap.xml` | **Generated** by `build.py`. |
@@ -98,3 +100,20 @@ DM Sans and Playfair Display are variable fonts — one file serves a range of
 weights — which the generator handles. Declaring each weight separately would
 reference files that do not exist and silently drop every bold weight back to
 a system font.
+
+## Editing the privacy policy
+
+The policy lives in `privacy.md` as plain Markdown. Edit that file and run the
+build; it publishes at `bftdfilms.com/privacy/` in the site's own design.
+
+It supports headings, paragraphs, bullet lists, tables, `**bold**`, `_italic_`,
+links and `code`. That is the whole of it — there is no wider Markdown support,
+because a policy page does not need any.
+
+To add another page of this kind (terms, for example), write the Markdown file
+and add an entry to `pages` in `content.json`:
+
+```json
+{ "slug": "terms", "source": "terms.md", "title": "Terms",
+  "description": "One line for search results and link previews." }
+```

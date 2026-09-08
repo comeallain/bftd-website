@@ -9,7 +9,9 @@ on:
       - content.json
       - template.html
       - project.html
+      - page.html
       - build.py
+      - '*.md'
   workflow_dispatch:
 
 permissions:
@@ -28,7 +30,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html robots.txt sitemap.xml projects
+          git add index.html robots.txt sitemap.xml projects privacy
           if git diff --staged --quiet; then
             echo "Nothing to regenerate."
           else
