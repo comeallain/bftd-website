@@ -261,7 +261,21 @@ def r_site_data(c):
 
 
 # ---------------------------------------------------------------- structured data
-SCHEMA_TYPE = {'Series': 'TVSeries', 'Documentary': 'Movie', 'Feature Film': 'Movie'}
+# How each project format is described to search engines and to link previews.
+# Add a format here whenever one is added to admin/config.yml, or it silently
+# falls back to being described as a film.
+SCHEMA_TYPE = {
+    'Feature Film': 'Movie',
+    'Documentary':  'Movie',
+    'Series':       'TVSeries',
+    'Podcast':      'PodcastSeries',
+}
+OG_TYPE = {
+    'Feature Film': 'video.movie',
+    'Documentary':  'video.movie',
+    'Series':       'video.tv_show',
+    'Podcast':      'website',       # Open Graph has no podcast type
+}
 
 def _ld(obj):
     """A <script type=application/ld+json> block that cannot break out of its tag."""
@@ -334,7 +348,7 @@ def r_head_project(c, p):
         f'<link rel="canonical" href="{esc(url)}">',
         f'<meta property="og:title" content="{esc(p["title"])}">',
         f'<meta property="og:description" content="{esc(p["logline"])}">',
-        '<meta property="og:type" content="video.movie">',
+        f'<meta property="og:type" content="{OG_TYPE.get(p["type"], "website")}">',
         f'<meta property="og:url" content="{esc(url)}">',
         f'<meta property="og:image" content="{esc(og)}">', *dims,
         f'<meta property="og:site_name" content="{esc(s["title"])}">',

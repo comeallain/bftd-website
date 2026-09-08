@@ -50,7 +50,7 @@ collections:
                       /projects/zarqawi/. Lower case, hyphens, no spaces.
                       Changing it breaks any link already shared.
                     pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Lower case letters, numbers and hyphens only']
-                  - {label: Format, name: type, widget: select, options: [Feature Film, Documentary, Series]}
+                  - {label: Format, name: type, widget: select, options: [Feature Film, Documentary, Series, Podcast]}
                   - {label: Status, name: status, widget: select, options: [In Development, In Pre-Production, In Production, In Post-Production, Completed, Released]}
                   - {label: Poster image, name: img, widget: image}
                   - {label: Logline, name: logline, widget: text, hint: One sentence. Shown on the card and used as the page description.}
