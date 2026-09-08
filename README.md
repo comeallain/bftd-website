@@ -26,9 +26,12 @@ So editing `content.json` directly on github.com is enough to publish.
 | File | What it is |
 |---|---|
 | `content.json` | **All site content.** The only file you normally edit. |
-| `template.html` | Page shell — CSS, JavaScript, and `{{SLOT}}` markers. |
-| `build.py` | Fills the template from `content.json`. |
+| `template.html` | Homepage shell — JavaScript and `{{SLOT}}` markers. |
+| `project.html` | Project detail page shell. |
+| `styles.css` | All styling, shared by every page. |
+| `build.py` | Fills the templates from `content.json`. |
 | `index.html` | **Generated.** Do not edit. |
+| `projects/<id>/` | **Generated** detail page per project. Do not edit. |
 | `images/` | Site images. |
 | `404.html` | Not-found page. |
 | `robots.txt`, `sitemap.xml` | **Generated** by `build.py`. |
@@ -51,6 +54,11 @@ Add an object to `projects.items` in `content.json`:
 
 Apostrophes, quotes and ampersands are all safe — the build escapes them. Order
 in the file is the order on the page.
+
+The `id` becomes the page URL, so `"id": "zarqawi"` publishes at
+`bftdfilms.com/projects/zarqawi/` with its own title, description, link preview
+image and structured data. Changing an `id` changes the URL and breaks any link
+already shared, so treat it as permanent once a project is public.
 
 ## Adding a reel video
 
